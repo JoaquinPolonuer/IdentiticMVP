@@ -75,6 +75,18 @@ class IdentiticApp extends Component {
       }
     ]);
 
+    this.onCloseState = event([
+      {
+        nativeEvent: ({ state }) =>
+          block([
+            cond(
+              eq(state, State.END),
+              set(this.buttonOpacity, runTiming(new Clock(), 0, 1))
+            )
+          ])
+      }
+    ]);
+
     this.buttonY = interpolate(this.buttonOpacity, {
       inputRange: [0, 1],
       outputRange: [100, 0],
@@ -156,7 +168,7 @@ class IdentiticApp extends Component {
               justifyContent: "center"
             }}
           >
-            <TapGestureHandler>
+            <TapGestureHandler onHandlerStateChange={this.onCloseState}>
               <Animated.View style={styles.closeButton}>
                 <Animated.Text
                   style={{
