@@ -50,9 +50,13 @@ const Container = styled.View`
   width: 315px;
   height: 280px;
   border-radius: 14px;
-  margin-left: 20px;
+  margin-left: 7px;
+  margin-right: 7px;
+
   margin-top: 20px;
+  margin-bottom: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  elevation: 2;
 `;
 
 const Cover = styled.View`
