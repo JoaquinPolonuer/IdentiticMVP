@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Logo = props => (
+const Subject = props => (
   <Container>
     <Image source={props.image} resizeMode="contain" />
     <Text>{props.text}</Text>
   </Container>
 );
 
-export default Logo;
+export default Subject;
 
 const Container = styled.View`
   flex-direction: row;
@@ -20,7 +20,7 @@ const Container = styled.View`
   align-items: center;
   margin: 4px 0px;
   width: 93%;
-  elevation: 1;
+  elevation: 2;
 `;
 
 const Image = styled.Image`
@@ -31,5 +31,5 @@ const Image = styled.Image`
 const Text = styled.Text`
   font-weight: 600;
   font-size: 17px;
-  margin-left: 8px;
+  margin-left: 12px;
 `;
