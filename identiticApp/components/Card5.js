@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = props => (
+const Card5 = props => (
   <Container>
     <Image source={props.image} />
     <Title>{props.title}</Title>
   </Container>
 );
 
-export default Card;
+export default Card5;
 
 const Content = styled.View`
   padding-left: 20px;
@@ -37,15 +37,15 @@ const Wrapper = styled.View`
   margin-left: 10px;
 `;
 const Container = styled.View`
-  width: 165px;
-  height: 170px;
+  width: 95%;
+  height: 100px;
 
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 14px;
   overflow: hidden;
-  margin-top: 10px;
-  margin-bottom: 4px;
+  margin-top: 0px;
+  margin-bottom: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 3;
 `;
