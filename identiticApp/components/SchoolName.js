@@ -1,20 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = props => (
+const SchoolName = props => (
   <Container>
-    <Image source={props.image} />
-    <Title>{props.title}</Title>
+    <Content>
+      <Wrapper>
+        <Subtitle>{props.subtitle}</Subtitle>
+
+        <Caption>{props.caption}</Caption>
+      </Wrapper>
+    </Content>
+    <Cover>
+      <Image source={props.image} />
+      <Title>{props.title}</Title>
+    </Cover>
   </Container>
 );
 
-export default Card;
+export default SchoolName;
 
 const Content = styled.View`
   padding-left: 20px;
   flex-direction: row;
   align-items: center;
-  height: 80px;
+  height: 70px;
 `;
 
 const Logo = styled.Image`
@@ -34,24 +43,26 @@ const Subtitle = styled.Text`
   margin-top: 4px;
 `;
 const Wrapper = styled.View`
-  margin-left: 10px;
+  margin-left: 0px;
 `;
 const Container = styled.View`
-  width: 165px;
-  height: 170px;
-
-  margin-left: 5px;
-  margin-right: 5px;
+  background: white;
+  width: 95%;
   border-radius: 14px;
-  overflow: hidden;
-  margin-top: 10px;
-  margin-bottom: 4px;
+  margin-left: 7px;
+  margin-right: 7px;
+
+  margin-top: 20px;
+  margin-bottom: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  elevation: 3;
+  elevation: 2;
 `;
 
 const Cover = styled.View`
   width: 100%;
+  height: 150px;
+  border-radius: 14px;
+  overflow: hidden;
 `;
 const Image = styled.Image`
   width: 100%;

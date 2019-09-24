@@ -38,7 +38,7 @@ const Wrapper = styled.View`
 `;
 const Container = styled.View`
   width: 165px;
-  height: 95;
+  height: 80;
 
   margin-left: 5px;
   margin-right: 10px;
