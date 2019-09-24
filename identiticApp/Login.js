@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Asset } from "expo-asset";
 import { AppLoading } from "expo";
-import IdentiticApp from "./app/index";
 
 function cacheImages(images) {
   return images.map(image => {
@@ -22,7 +21,7 @@ export default class App extends React.Component {
     };
   }
 
-  async _loadAssetsAsync() {
+  async _loadAsync() {
     const imageAssets = cacheImages([require("./assets/bg1.jpg")]);
 
     await Promise.all([...imageAssets]);
