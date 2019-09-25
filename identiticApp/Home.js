@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView, SafeAreaView, Text } from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
-import Card from "./components/Card";
+import CardBuscarClases from "./components/CardBuscarClases";
 import Card2 from "./components/Card2";
 
 import Subject from "./components/Subjects";
@@ -40,7 +40,7 @@ export default function AApp() {
           style={{ paddingBottom: 10 }}
           showsHorizontalScrollIndicator={false}
         >
-          <Card
+          <CardBuscarClases
             title="Buscar         Clases"
             image={require("./assets/class.jpg")}
             caption="React Native"
@@ -84,23 +84,22 @@ export default function AApp() {
 
 const subjects = [
   {
-    image: require("./assets/matematica.png"),
+    image: require("./assets/ico-matematica.png"),
     text: "Matematica"
   },
   {
-    image: require("./assets/lengua.png"),
+    image: require("./assets/ico-lengua.png"),
     text: "Lengua"
   },
   {
-    image: require("./assets/historia.png"),
+    image: require("./assets/ico-historia.png"),
     text: "Historia"
   },
   {
-    image: require("./assets/ingles.png"),
-    text: "Ingles"
+    image: require("./assets/ico-quimica.png"),
+    text: "Quimica"
   }
 ];
-
 
 const Avatar = styled.Image`
   width: 80px;
@@ -151,4 +150,3 @@ const TitleBar = styled.View`
   margin-bottom: 30px;
   padding-left: 80px;
 `;
-
