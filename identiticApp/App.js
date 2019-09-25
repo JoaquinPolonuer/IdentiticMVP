@@ -4,7 +4,7 @@ import { Header, SearchBar } from "react-native-elements";
 import styled from "styled-components";
 import SchoolName from "./components/SchoolName";
 import Card from "./components/Card";
-import Card5 from "./components/Card5";
+import Ofrecer from "./components/Ofrecer";
 
 import Subject from "./components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
@@ -56,7 +56,7 @@ export default function App() {
             subtitle="5 of 12 sections"
           />
         </ScrollView>
-        <Card5
+        <Ofrecer
           title="Ofrecer Clases"
           image={require("./assets/background3.jpg")}
           caption="React Native"

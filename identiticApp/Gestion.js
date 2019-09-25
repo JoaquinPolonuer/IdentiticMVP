@@ -1,10 +1,10 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import { ScrollView, SafeAreaView, Text } from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
 import Card from "./components/Card";
 import Card2 from "./components/Card2";
-import Card3 from "./components/Card3";
+import Gestion from "./components/Gestion";
 
 import Subject from "./components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
@@ -14,42 +14,36 @@ export default class App extends Component {
   render() {
     return (
       <Container>
-
         <Header
           linearGradientProps={{
-          colors: ["#7444E8", "#B43DF3"],
-          start: { x: 0, y: 0.5 },
-          end: { x: 1, y: 0.5 }
+            colors: ["#7444E8", "#B43DF3"],
+            start: { x: 0, y: 0.5 },
+            end: { x: 1, y: 0.5 }
           }}
           centerComponent={<Bar>IDENTITIC</Bar>}
           rightComponent={
-          <MaterialCommunityIcons
-            name="message-reply"
-            size={28}
-            color={"#FFF"}
-            style={{ position: "absolute", right: 10, top: -15 }}
-          />
+            <MaterialCommunityIcons
+              name="message-reply"
+              size={28}
+              color={"#FFF"}
+              style={{ position: "absolute", right: 10, top: -15 }}
+            />
           }
         />
-      
-      <ScrollView
-      
-      >
 
-        {gestiones.map((gestion, index) => (
-            <Card3 key={index} image={gestion.image} title={gestion.text}             
-            />
+        <ScrollView>
+          {gestiones.map((gestion, index) => (
+            <Gestion key={index} image={gestion.image} title={gestion.text} />
           ))}
-        
-        {/* <Card3
+
+          {/* <Gestion
           title="Lengua y literatura"
           image={require("./assets/practice.jpg")}
           c aption="React Native"
           logo={require("./assets/logo-react.png")}  
         >
-        </Card3> */}
-
-      </ScrollView>
+        </Gestion> */}
+        </ScrollView>
       </Container>
     );
   }
@@ -73,7 +67,6 @@ const gestiones = [
     text: "Horarios"
   }
 ];
-
 
 const Avatar = styled.Image`
   width: 80px;
@@ -124,7 +117,3 @@ const TitleBar = styled.View`
   margin-bottom: 30px;
   padding-left: 80px;
 `;
-
-       
-       
-       

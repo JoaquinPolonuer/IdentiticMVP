@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card5 = props => (
+const Gestion = props => (
   <Container>
     <Image source={props.image} />
     <Title>{props.title}</Title>
   </Container>
 );
 
-export default Card5;
+export default Gestion;
 
 const Content = styled.View`
   padding-left: 20px;
   flex-direction: row;
   align-items: center;
-  height: 80px;
+  height: 50px;
 `;
 
 const Logo = styled.Image`
@@ -37,15 +37,15 @@ const Wrapper = styled.View`
   margin-left: 10px;
 `;
 const Container = styled.View`
-  width: 95%;
-  height: 100px;
+  width: 350px;
+  height: 105;
 
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 14px;
   overflow: hidden;
-  margin-top: 0px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 3px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 3;
 `;
@@ -62,9 +62,8 @@ const Image = styled.Image`
 `;
 const Title = styled.Text`
   color: white;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 170px;
+  margin-left: 15px;
+  margin-top: 19px;
 `;

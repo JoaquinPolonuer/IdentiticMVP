@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card3 = props => (
+const Ofrecer = props => (
   <Container>
     <Image source={props.image} />
     <Title>{props.title}</Title>
   </Container>
 );
 
-export default Card3;
+export default Ofrecer;
 
 const Content = styled.View`
   padding-left: 20px;
   flex-direction: row;
   align-items: center;
-  height: 50px;
+  height: 80px;
 `;
 
 const Logo = styled.Image`
@@ -37,15 +37,15 @@ const Wrapper = styled.View`
   margin-left: 10px;
 `;
 const Container = styled.View`
-  width: 350px;
-  height: 105;
+  width: 95%;
+  height: 100px;
 
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 14px;
   overflow: hidden;
-  margin-top: 10px;
-  margin-bottom: 3px;
+  margin-top: 0px;
+  margin-bottom: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 3;
 `;
@@ -62,10 +62,9 @@ const Image = styled.Image`
 `;
 const Title = styled.Text`
   color: white;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
-  margin-left: 15px;
-  margin-top: 19px;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 170px;
 `;
-
-

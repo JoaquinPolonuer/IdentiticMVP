@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { TouchableOpacity } from "react-native";
 
-const Card = props => (
+const ClasesMaterias = props => (
   <Container>
     <Image source={props.image} />
     <Title>{props.title}</Title>
   </Container>
 );
 
-export default Card;
+export default ClasesMaterias;
 
 const Content = styled.View`
   padding-left: 20px;
@@ -39,8 +39,7 @@ const Wrapper = styled.View`
 `;
 const Container = styled.TouchableOpacity`
   width: 165px;
-  height: 170px;
-
+  height: 120px;
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 14px;
