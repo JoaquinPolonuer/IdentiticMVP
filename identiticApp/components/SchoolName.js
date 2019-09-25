@@ -46,27 +46,30 @@ const Wrapper = styled.View`
   margin-left: 0px;
 `;
 const Container = styled.View`
-  background: white;
-  width: 95%;
-  border-radius: 14px;
-  margin-left: 7px;
-  margin-right: 7px;
-
-  margin-top: 20px;
-  margin-bottom: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  height: 180px;
+  left: 5%;
+  position: relative;
   elevation: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+  background: #ffffff;
+  border-radius: 5px;
 `;
 
 const Cover = styled.View`
   width: 100%;
   height: 150px;
-  border-radius: 14px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
   overflow: hidden;
 `;
 const Image = styled.Image`
   width: 100%;
   height: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
   position: absolute;
   top: 0;
   left: 0;

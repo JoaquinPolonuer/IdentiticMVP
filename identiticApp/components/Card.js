@@ -4,7 +4,6 @@ import { TouchableOpacity } from "react-native";
 
 const Card = props => (
   <Container>
-    <Image source={props.image} />
     <Title>{props.title}</Title>
   </Container>
 );
@@ -12,7 +11,6 @@ const Card = props => (
 export default Card;
 
 const Content = styled.View`
-  padding-left: 20px;
   flex-direction: row;
   align-items: center;
   height: 80px;
@@ -38,15 +36,15 @@ const Wrapper = styled.View`
   margin-left: 10px;
 `;
 const Container = styled.TouchableOpacity`
-  width: 165px;
-  height: 170px;
+  width: 43.5%;
+  height: 100px;
+  margin: 3.5px;
+  left: 10%;
+  border-radius: 5px;
+  background-color: #7444e8;
 
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 14px;
   overflow: hidden;
-  margin-top: 10px;
-  margin-bottom: 4px;
+  margin-top: 60px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 3;
 `;
@@ -54,13 +52,7 @@ const Container = styled.TouchableOpacity`
 const Cover = styled.View`
   width: 100%;
 `;
-const Image = styled.Image`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
+
 const Title = styled.Text`
   color: white;
   font-size: 24px;

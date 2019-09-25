@@ -29,39 +29,16 @@ export default function App() {
           />
         }
       />
-      <ScrollView>
+
+      <ScrollView
+        horizontal={true}
+        style={{ paddingBottom: 10 }}
+        showsHorizontalScrollIndicator={false}
+      >
         <SchoolName
           image={require("./assets/ort.jpg")}
           subtitle={"Mi escuela"}
           caption={"Colegio ORT Montañeses"}
-        />
-
-        <ScrollView
-          horizontal={true}
-          style={{ paddingBottom: 10 }}
-          showsHorizontalScrollIndicator={false}
-        >
-          <Card
-            title="Ver Clases"
-            image={require("./assets/background2.jpg")}
-            caption="React Native"
-            logo={require("./assets/logo-react.png")}
-            subtitle="5 of 12 sections"
-          />
-          <Card
-            title="Solicitar      Clases"
-            image={require("./assets/background1.jpg")}
-            caption="React Native"
-            logo={require("./assets/logo-react.png")}
-            subtitle="5 of 12 sections"
-          />
-        </ScrollView>
-        <Ofrecer
-          title="Ofrecer Clases"
-          image={require("./assets/background3.jpg")}
-          caption="React Native"
-          logo={require("./assets/logo-react.png")}
-          subtitle="5 of 12 sections"
         />
       </ScrollView>
     </Container>

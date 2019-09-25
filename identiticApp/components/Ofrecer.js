@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Ofrecer = props => (
   <Container>
-    <Image source={props.image} />
     <Title>{props.title}</Title>
   </Container>
 );
@@ -36,16 +35,15 @@ const Subtitle = styled.Text`
 const Wrapper = styled.View`
   margin-left: 10px;
 `;
-const Container = styled.View`
-  width: 95%;
-  height: 100px;
-
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 14px;
+const Container = styled.TouchableOpacity`
+  width: 330px;
+  height: 80px;
+  background-color: white;
+  margin-left: 18px;
+  margin-bottom: 4px;
+  border-radius: 5px;
   overflow: hidden;
-  margin-top: 0px;
-  margin-bottom: 5px;
+  margin-top: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 3;
 `;
@@ -53,18 +51,12 @@ const Container = styled.View`
 const Cover = styled.View`
   width: 100%;
 `;
-const Image = styled.Image`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
+
 const Title = styled.Text`
-  color: white;
-  font-size: 24px;
+  color: black;
   font-weight: bold;
+  font-size: 24px;
   margin-top: 20px;
-  margin-left: 20px;
+  left: 5%;
   width: 170px;
 `;
