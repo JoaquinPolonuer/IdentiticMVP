@@ -26,7 +26,9 @@ export default function App() {
           />
         }
       />
-      <ScrollView>
+
+      <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+        <Container></Container>
         <ContainerPerfil>
           <Menu source={require("./assets/menu.png")} />
           <Avatar source={require("./assets/avatar.jpg")} />
@@ -141,10 +143,10 @@ const Menu = styled.Image`
 const ContainerPerfil = styled.View`
   width: 340px;
   height: 220px;
-  position: absolute;
-  left: 5%;
+  position: relative;
+
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  right: 6%;
+  elevation: 2;
   margin-top: 20px;
   background: #ffffff;
   border-radius: 5px;
@@ -153,11 +155,11 @@ const ContainerPerfil = styled.View`
 const ContainerPerfil2 = styled.View`
   width: 340px;
   height: 180px;
-  position: absolute;
-  left: 5%;
-  right: 6%;
+  position: relative;
+  elevation: 2;
+
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  margin-top: 260px;
+  margin-top: 20px;
   background: #ffffff;
   border-radius: 5px;
 `;
@@ -165,11 +167,12 @@ const ContainerPerfil2 = styled.View`
 const ContainerPerfil3 = styled.View`
   width: 340px;
   height: 80px;
-  position: absolute;
-  left: 5%;
-  right: 6%;
+  position: relative;
+  elevation: 2;
+
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  margin-top: 460px;
+  margin-top: 20px;
+  margin-bottom: 2px;
   background: #ffffff;
   border-radius: 5px;
 `;
