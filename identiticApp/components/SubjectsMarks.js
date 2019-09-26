@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const SubjectMarks = props => (
+const Subject = props => (
   <Container>
     <Image source={props.image} resizeMode="contain" />
     <Text>{props.text}</Text>
-    <Num>{props.mark}</Num>
   </Container>
 );
 
-export default SubjectMarks;
+export default Subject;
 
 const Container = styled.View`
   flex-direction: row;
@@ -19,7 +18,7 @@ const Container = styled.View`
   border-radius: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
   align-items: center;
-  margin: 2px 0px;
+  margin: 4px 0px;
   width: 93%;
   elevation: 2;
 `;
@@ -32,13 +31,5 @@ const Image = styled.Image`
 const Text = styled.Text`
   font-weight: 600;
   font-size: 17px;
-  margin-left: 12px;
-`;
-const Num = styled.Text`
-  font-weight: 500;
-  font-size: 17px;
-  position: absolute;
-  right: 25px;
-  color: #7c7a7a;
   margin-left: 12px;
 `;
