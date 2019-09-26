@@ -1,21 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import { TouchableOpacity } from "react-native";
 
-const ClasesMaterias = props => (
+const ClassBenefit = props => (
   <Container>
-    <Image source={props.image} />
-    <Title>{props.title}</Title>
+    <Content>
+      <Wrapper>
+        <Caption>{props.caption}</Caption>
+      </Wrapper>
+    </Content>
+    <Cover>
+      <Image source={props.image} />
+    </Cover>
   </Container>
 );
 
-export default ClasesMaterias;
+export default ClassBenefit;
 
 const Content = styled.View`
-  padding-left: 20px;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   align-items: center;
-  height: 80px;
+  height: 50px;
 `;
 
 const Logo = styled.Image`
@@ -23,8 +29,10 @@ const Logo = styled.Image`
   height: 44px;
 `;
 const Caption = styled.Text`
-  color: #3c4560;
-  font-size: 20px;
+  color: #6658e4;
+  font-size: 25px;
+  align-self: center;
+  text-align: center;
   font-weight: 600;
 `;
 const Subtitle = styled.Text`
@@ -35,26 +43,34 @@ const Subtitle = styled.Text`
   margin-top: 4px;
 `;
 const Wrapper = styled.View`
-  margin-left: 10px;
+  margin-left: 0px;
+  justify-content: center;
+  align-items: center;
 `;
-const Container = styled.TouchableOpacity`
-  width: 165px;
-  height: 120px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 14px;
-  overflow: hidden;
-  margin-bottom: 10px;
+const Container = styled.View`
+  width: 90%;
+  left: 5%;
+  position: relative;
+  elevation: 2;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  elevation: 3;
+  margin-top: 10px;
+  background: #ffffff;
+  border-radius: 5px;
 `;
 
 const Cover = styled.View`
   width: 100%;
+  height: 90px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
 `;
 const Image = styled.Image`
   width: 100%;
   height: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
   position: absolute;
   top: 0;
   left: 0;

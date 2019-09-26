@@ -5,12 +5,15 @@ import {
   View,
   FlatList,
   Dimensions,
-  ScrollView
+  ScrollView,
+  SafeAreaView,
+  TextInput
 } from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import ClasesMaterias from "./components/ClasesMaterias";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const data = [
   {
@@ -102,11 +105,50 @@ export default class App extends React.Component {
           }
         />
         <ScrollView>
+          <SafeAreaView style={{ flex: 1 }}>
+            <View style={{ flex: 1 }}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  backgroundColor: "white",
+                  height: 45,
+                  padding: 10,
+                  top: 15,
+                  borderRadius: 5,
+                  marginHorizontal: 20,
+                  shadowOffset: { width: 0, height: 0 },
+                  shadowColor: "black",
+                  shadowOpacity: 0.2,
+                  elevation: 1,
+                  marginBottom: 15
+                }}
+              >
+                <Icon name="ios-search" size={20} style={{ top: 3 }} />
+                <TextInput
+                  placeholder="Buscar clases"
+                  placeholderTextColor="grey"
+                  style={{
+                    flex: 1,
+                    fontWeight: "500",
+                    backgroundColor: "white",
+                    left: 10,
+                    top: 3,
+                    height: 20
+                  }}
+                />
+              </View>
+            </View>
+          </SafeAreaView>
           <FlatList
             data={formatData(data, numColumns)}
             style={styles.container}
             renderItem={this.renderItem}
             numColumns={numColumns}
+            contentContainerStyle={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center"
+            }}
           />
         </ScrollView>
       </Container>
