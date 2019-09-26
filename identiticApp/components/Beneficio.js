@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { TouchableOpacity } from "react-native";
 
-const Clase = props => (
+const Beneficio = props => (
   <Container>
     <Content>
       <Wrapper>
@@ -26,13 +26,13 @@ const Clase = props => (
     </Row>
     <Row>
       <Coordinate>
-        <CoordText>Coordinar Clase</CoordText>
+        <CoordText>Canjear</CoordText>
       </Coordinate>
     </Row>
   </Container>
 );
 
-export default Clase;
+export default Beneficio;
 
 const Content = styled.View`
   justify-content: center;
@@ -85,13 +85,13 @@ const Information = styled.View`
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 15px;
+  top: 0px;
   bottom: 10px;
 `;
 const Topics = styled.View`
   width: 270px;
   position: relative;
-  top: 60;
+  top: 82;
   align-items: center;
   flex-direction: column;
 `;
@@ -105,7 +105,6 @@ const Coordinate = styled.TouchableOpacity`
   background: #fe7282;
   border-radius: 10px;
 `;
-const CoordButton = styled.TouchableOpacity``;
 const ProfileIm = styled.Image`
   width: 100%;
   height: 100%;
@@ -123,32 +122,34 @@ const ProfileName = styled.Text`
   color: #6d6d6d;
 `;
 const ProfileSchool = styled.Text`
-  width: 170px;
+  width: 270px;
   text-align: center;
   font-weight: 500;
-  font-size: 14px;
-  margin-bottom: 5px;
+  font-size: 24px;
+  margin-bottom: 0px;
   color: #979797;
 `;
 const Idtb = styled.Text`
-  margin-top: 2px;
+  margin-top: 0px;
   color: #6658e4;
-  font-size: 16;
+  font-size: 20;
   font-weight: 600;
 `;
 const TopDescription = styled.Text`
   color: #2c2c2c;
   font-size: 16px;
-  font-weight: 500;
-  text-align: justify;
+  font-weight: 400;
+  text-align: center;
 `;
 const CoordText = styled.Text`
   color: white;
 `;
 const ImContainer = styled.View`
-  width: 85px;
+  width: 120%;
   height: 85px;
-  border-radius: 100px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+
   align-items: center;
   justify-content: center;
   overflow: hidden;
