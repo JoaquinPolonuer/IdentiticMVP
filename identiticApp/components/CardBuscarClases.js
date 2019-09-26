@@ -43,7 +43,7 @@ const Container = styled.TouchableOpacity`
 
   margin-left: 12px;
   margin-right: 5px;
-  border-radius: 14px;
+  border-radius: 5px;
   overflow: hidden;
   margin-top: 8px;
   margin-bottom: 4px;

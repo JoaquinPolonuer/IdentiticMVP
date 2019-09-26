@@ -33,7 +33,7 @@ export default function App() {
       <ClassBenefit image={require("./assets/class.jpg")} caption={"Clases"} />
       <ScrollView
         horizontal={true}
-        style={{ paddingBottom: 15, marginEnd: 15 }}
+        style={{ paddingBottom: 15, marginEnd: 4 }}
         showsHorizontalScrollIndicator={false}
       >
         {clases.map((card, index) => (

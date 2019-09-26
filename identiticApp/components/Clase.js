@@ -48,11 +48,11 @@ const Content = styled.View`
 
 const Caption = styled.Text`
   color: #6658e4;
-  font-size: 25px;
+  font-size: 20px;
   align-self: center;
   text-align: center;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: capitalize;
 `;
 
 const Wrapper = styled.View`
@@ -72,13 +72,12 @@ const Row = styled.View`
 `;
 const Container = styled.View`
   background: white;
-  width: 325px;
+  width: 320px;
   height: 380px;
-  border-radius: 14px;
-  margin-left: 18px;
-  margin-right: 3px;
+  border-radius: 5px;
+  left: 0%;
+  margin: 20px;
   margin-top: 20px;
-  margin-bottom: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 2;
 `;
