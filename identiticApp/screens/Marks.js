@@ -56,17 +56,52 @@ const subjects = [
   {
     image: require("./assets/ico-lengua.png"),
     text: "Lengua",
-    mark: "10"
+    mark: "7"
   },
   {
     image: require("./assets/ico-historia.png"),
     text: "Historia",
-    mark: "10"
+    mark: "8"
   },
   {
     image: require("./assets/ico-quimica.png"),
     text: "Quimica",
     mark: "10"
+  },
+  {
+    image: require("./assets/ico-quimica.png"),
+    text: "Fisica",
+    mark: "10"
+  },
+  {
+    image: require("./assets/ico-quimica.png"),
+    text: "Arte",
+    mark: "8"
+  },
+  {
+    image: require("./assets/ico-quimica.png"),
+    text: "Biologia",
+    mark: "8"
+  },
+  {
+    image: require("./assets/ico-quimica.png"),
+    text: "Educacion Fisica",
+    mark: "10"
+  },
+  {
+    image: require("./assets/ico-quimica.png"),
+    text: "Formacion Etica",
+    mark: "9"
+  },
+  {
+    image: require("./assets/ico-quimica.png"),
+    text: "Geografia",
+    mark: "9"
+  },
+  {
+    image: require("./assets/ico-quimica.png"),
+    text: "Ingles",
+    mark: "8"
   }
 ];
 
