@@ -181,12 +181,12 @@ class IdentiticApp extends Component {
               </Animated.View>
             </TapGestureHandler>
 
-            <TextInput
+            <TextInputUsername
               placeholder="Username"
               style={styles.TextInput}
               placeholderTextColor="black"
             />
-            <TextInput
+            <TextInputPassword
               placeholder="Password"
               style={styles.TextInput}
               placeholderTextColor="black"
@@ -226,6 +226,7 @@ const styles = StyleSheet.create({
   },
   buttonInicio: {
     backgroundColor: "#F13564",
+    touchableOpacity: true,
     height: 48,
     width: 250,
     marginHorizontal: 65,
@@ -238,7 +239,18 @@ const styles = StyleSheet.create({
     shadowColor: "black",
     shadowOpacity: 0.4
   },
-  TextInput: {
+  TextInputUsername: {
+    height: 48,
+    width: 320,
+    borderRadius: 25,
+    borderWidth: 0.5,
+    marginHorizontal: 20,
+    marginTop: 15,
+    paddingLeft: 20,
+    marginVertical: 5,
+    borderColor: "rgba(0,0,0,0.2)"
+  },
+  TextInputPassword: {
     height: 48,
     width: 320,
     borderRadius: 25,
