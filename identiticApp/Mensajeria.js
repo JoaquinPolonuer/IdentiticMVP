@@ -36,7 +36,7 @@ export default function App() {
             backgroundColor: "white",
             height: 45,
             padding: 10,
-            top: 15,
+            top: 20,
             borderRadius: 5,
             marginHorizontal: 20,
             shadowOffset: { width: 0, height: 0 },
@@ -62,15 +62,16 @@ export default function App() {
         </View>
       </View>
       <ScrollView
-        horizontal={false}
+        vertical={true}
         contentContainerStyle={{ alignItems: "center" }}
+        style={{ bottom: 35 }}
       >
         {ChatPersonas.map((chatPersona, index) => (
           <ChatPersona
             key={index}
             nombre={chatPersona.text}
             image={chatPersona.image}
-            preview={chatPersona.preview}
+            descripcion={chatPersona.descripcion}
           />
         ))}
       </ScrollView>
@@ -80,24 +81,24 @@ export default function App() {
 
 const ChatPersonas = [
   {
-    image: require("./assets/avatar.jpg"),
+    image: require("./assets/waisman.jpg"),
     text: "Gonzalo Waisman",
-    preview: "Sos el CEO de Identitic?"
+    descripcion: "Entonces a las 9, perfecto!"
   },
   {
-    image: require("./assets/avatar.jpg"),
-    text: "Santino DeadNigga",
-    preview: "Sorry, i dont speak White Power"
+    image: require("./assets/palmieri.png"),
+    text: "Santino Palmieri",
+    descripcion: "Me pasas el resumen de Lengua"
   },
   {
-    image: require("./assets/avatar.jpg"),
+    image: require("./assets/maxi.jpg"),
     text: "Maximo Sucari",
-    preview: "Que haces papa, te quedan TOSTADAS??"
+    descripcion: "Tranquilo, ahi me mandaron los IDTC"
   },
   {
     image: require("./assets/avatar.jpg"),
     text: "Agustin Rombola",
-    preview: "Fichate las tetas de Sigrid, ALTA MILF"
+    descripcion: "Tu nota del recuperatorio esta aprobada"
   }
 ];
 

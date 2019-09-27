@@ -5,20 +5,19 @@ import {} from "react-native-elements";
 const ChatPersona = props => (
   <Container>
     <Nombre>{props.nombre}</Nombre>
+    <Descripcion>{props.descripcion}</Descripcion>
     <Avatar source={props.image} />
-    <Preview>{props.preview}</Preview>
   </Container>
 );
 
 export default ChatPersona;
 
 const Container = styled.TouchableOpacity`
-  position: absolute;
+  position: relative;
   width: 90%;
   height: 80px;
   overflow: hidden;
-  left: 5%;
-  margin-top: 20px;
+  margin-top: 10px;
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -26,6 +25,7 @@ const Container = styled.TouchableOpacity`
 
 const Nombre = styled.Text`
   color: black;
+  position: relative;
   font-weight: bold;
   font-size: 18px;
   top: 20%;
@@ -38,15 +38,16 @@ const Avatar = styled.Image`
   height: 60px;
   background-color: black;
   border-radius: 30px;
-  position: absolute;
+  position: relative;
   left: 5%;
-  top: 12%;
+  bottom: 32%;
 `;
 
-const Preview = styled.Text`
-  color: black;
+const Descripcion = styled.Text`
+  color: #9a9a9a;
+  position: relative;
   font-size: 12px;
-  top: 23%;
+  top: 25%;
   left: 30%;
-  width: 200px;
+  width: 80%;
 `;
