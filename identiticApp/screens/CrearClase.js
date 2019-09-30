@@ -59,29 +59,19 @@ export default class AApp extends React.Component {
           <Dias>
             <Texto>Dias</Texto>
             <Row>
-              <DayButton>
-                <NameDia>l</NameDia>
-              </DayButton>
-              <DayButton>
-                <NameDia>m</NameDia>
-              </DayButton>
-              <DayButton>
-                <NameDia>m</NameDia>
-              </DayButton>
-              <DayButton>
-                <NameDia>J</NameDia>
-              </DayButton>
-              <DayButton>
-                <NameDia>v</NameDia>
-              </DayButton>
+              {dias.map((dia, index) => (
+                <DayButton key={index}>
+                  <NameDia>{dia.name[0]}</NameDia>
+                </DayButton>
+              ))}
             </Row>
           </Dias>
           <Materia>
             <Texto>Materia</Texto>
             <Dropdown
-              label="Materia"
               data={data}
               style={{ marginTop: 5 }}
+              dropdownOffset={{ top: 8, left: 0 }}
               containerStyle={{
                 marginTop: 10,
                 height: 60,
@@ -131,6 +121,23 @@ const subjects = [
   }
 ];
 
+const dias = [
+  {
+    name: "Lunes"
+  },
+  {
+    name: "Martes"
+  },
+  {
+    name: "Miercoles"
+  },
+  {
+    name: "Jueves"
+  },
+  {
+    name: "Viernes"
+  }
+];
 const Container = styled.View`
   flex: 1;
   background-color: whitesmoke;
