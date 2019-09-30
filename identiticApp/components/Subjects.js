@@ -11,22 +11,22 @@ const SubjectMarks = props => (
 
 export default SubjectMarks;
 
-const Container = styled.View`
+const Container = styled.TouchableOpacity`
   flex-direction: row;
   background: white;
-  height: 60px;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+  height: 40px;
+  right: 2%;
+  border-radius: 5px;
   align-items: center;
-  margin: 2px 0px;
-  width: 93%;
+  margin-top: 10px;
+  width: 88%;
   elevation: 2;
 `;
 
 const Image = styled.Image`
   height: 36px;
   width: 36px;
+  left: 10%;
 `;
 
 const Text = styled.Text`
@@ -36,9 +36,8 @@ const Text = styled.Text`
 `;
 const Num = styled.Text`
   font-weight: 500;
-  font-size: 17px;
-  position: absolute;
-  right: 25px;
+  font-size: 10px;
+  position: relative;
   color: #7c7a7a;
-  margin-left: 12px;
+  left: 70%;
 `;

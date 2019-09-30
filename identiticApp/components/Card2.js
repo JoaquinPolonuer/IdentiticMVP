@@ -38,15 +38,13 @@ const Wrapper = styled.View`
   margin-left: 10px;
 `;
 const Container = styled.TouchableOpacity`
-  width: 165px;
-  height: 80;
-
-  margin-left: 5px;
-  margin-right: 12px;
-  border-radius: 14px;
+  width: 140px;
+  height: 75;
+  right: 6%;
+  bottom: 10%;
+  margin-top: 20px;
+  border-radius: 5px;
   overflow: hidden;
-  margin-top: 8px;
-  margin-bottom: 4px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 3;
 `;
