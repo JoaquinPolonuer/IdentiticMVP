@@ -22,6 +22,7 @@ const Clase = props => (
     <Row>
       <Topics>
         <TopDescription>{props.topic}</TopDescription>
+        <Dias>{props.days}</Dias>
       </Topics>
     </Row>
     <Row>
@@ -127,7 +128,7 @@ const ProfileSchool = styled.Text`
   text-align: center;
   font-weight: 500;
   font-size: 14px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   color: #979797;
 `;
 const Idtb = styled.Text`
@@ -140,7 +141,16 @@ const TopDescription = styled.Text`
   color: #2c2c2c;
   font-size: 16px;
   font-weight: 500;
-  text-align: justify;
+  text-align: center;
+`;
+const Dias = styled.Text`
+  margin-top: 5px;
+  color: #2c2c2c;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  color: #6658e4;
 `;
 const CoordText = styled.Text`
   color: white;

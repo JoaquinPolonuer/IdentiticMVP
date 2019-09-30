@@ -2,10 +2,10 @@ import React from "react";
 import { ScrollView, SafeAreaView, Text } from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
-import CardBuscarClases from "./components/CardBuscarClases";
-import Card2 from "./components/Card2";
+import CardBuscarClases from "../components/CardBuscarClases";
+import Card2 from "../components/Card2";
 
-import Subject from "./components/Subjects";
+import Subject from "../components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 

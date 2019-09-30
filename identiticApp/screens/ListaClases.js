@@ -45,6 +45,7 @@ export default function ListaClases() {
             escuela={card.escuela}
             amount={card.amount}
             topic={card.topic}
+            days={card.days}
           />
         ))}
       </ScrollView>
@@ -68,10 +69,9 @@ const clases = [
     name: "Joaquin Polonuer",
     image: require("./assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
-    topic:
-      "Tema: Funcion por tamos, funciones logartimicas, analisis matematico y ecuaciones de todo tipo",
+    topic: "Analisis matematico y ecuaciones",
     amount: "125 Idtb Disponibles",
-    logo: require("./assets/logo-react.png")
+    days: "Lunes, Martes y Jueves"
   },
   {
     materia: "matematica",
@@ -80,7 +80,7 @@ const clases = [
     escuela: "Ort sede Belgrano",
     topic: "Tema: Derivadas e integrales, calculo, algebra",
     amount: "235 Idtb Disponibles",
-    logo: require("./assets/logo-react.png")
+    days: "Lunes, Martes y Jueves"
   },
   {
     materia: "matematica",
@@ -89,6 +89,6 @@ const clases = [
     escuela: "Ort sede Belgrano",
     topic: "Tema: Geometria, angulos, trigonometria, semejanza y Pitagoras",
     amount: "220 Idtb Disponibles",
-    logo: require("./assets/logo-react.png")
+    days: "Lunes, Martes y Jueves"
   }
 ];
