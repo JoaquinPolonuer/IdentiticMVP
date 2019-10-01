@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { ScrollView, SafeAreaView, Text, TouchableOpacity } from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
@@ -7,59 +7,66 @@ import Card2 from "../components/Card2";
 import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function Profile() {
-  return (
-    <Container>
-      <Header
-        linearGradientProps={{
-          colors: ["#7444E8", "#B43DF3"],
-          start: { x: 0, y: 0.5 },
-          end: { x: 1, y: 0.5 }
-        }}
-        centerComponent={<Bar>IDENTITIC</Bar>}
-        rightComponent={
-          <MaterialCommunityIcons
-            name="message-reply"
-            size={28}
-            color={"#FFF"}
-            style={{ position: "absolute", right: 10, top: -15 }}
-          />
-        }
-      />
+export default class Profile extends Component {
+  static navigationOptions = {
+    header: null
+  };
+  render(){
+    return (
+      <Container>
+        <Header
+          linearGradientProps={{
+            colors: ["#7444E8", "#B43DF3"],
+            start: { x: 0, y: 0.5 },
+            end: { x: 1, y: 0.5 }
+          }}
+          centerComponent={<Bar>IDENTITIC</Bar>}
+          rightComponent={
+            <MaterialCommunityIcons
+              name="message-reply"
+              size={28}
+              color={"#FFF"}
+              style={{ position: "absolute", right: 10, top: -15 }}
+            />
+          }
+        />
+  
+        <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+          <Container></Container>
+          <ContainerPerfil>
+            <Menu source={require("../assets/menu.png")} />
+            <Avatar source={require("../assets/avatar.jpg")} />
+            <Nombre>Gonzalo Waisman</Nombre>
+            <Jerarquia>Alumno</Jerarquia>
+            <BotonClase>
+              <BotonText>Pedir Clase</BotonText>
+            </BotonClase>
+            <BotonMensaje>
+              <BotonTextMensaje>Mensaje</BotonTextMensaje>
+            </BotonMensaje>
+          </ContainerPerfil>
+  
+          <ContainerPerfil2>
+            <Actividad>Sobre mí</Actividad>
+            <Descripcion>
+              Tengo 16, voy al colegio ORT, me gustan mucho los deportes en donde
+              compito en Futbol, Tenis, Natacion y Badminton. Ademas en mi tiempo
+              libre me gusta ir a la casa de mis amigos y divertirme con ellos.
+            </Descripcion>
+          </ContainerPerfil2>
+  
+          <ContainerPerfil3>
+            <Actividad>Rendimiento</Actividad>
+            <BotonRojo1>
+              <BotonText>Lengua</BotonText>
+            </BotonRojo1>
+          </ContainerPerfil3>
+        </ScrollView>
+      </Container>
+    );
 
-      <ScrollView contentContainerStyle={{ alignItems: "center" }}>
-        <Container></Container>
-        <ContainerPerfil>
-          <Menu source={require("./assets/menu.png")} />
-          <Avatar source={require("./assets/avatar.jpg")} />
-          <Nombre>Gonzalo Waisman</Nombre>
-          <Jerarquia>Alumno</Jerarquia>
-          <BotonClase>
-            <BotonText>Pedir Clase</BotonText>
-          </BotonClase>
-          <BotonMensaje>
-            <BotonTextMensaje>Mensaje</BotonTextMensaje>
-          </BotonMensaje>
-        </ContainerPerfil>
-
-        <ContainerPerfil2>
-          <Actividad>Sobre mí</Actividad>
-          <Descripcion>
-            Tengo 16, voy al colegio ORT, me gustan mucho los deportes en donde
-            compito en Futbol, Tenis, Natacion y Badminton. Ademas en mi tiempo
-            libre me gusta ir a la casa de mis amigos y divertirme con ellos.
-          </Descripcion>
-        </ContainerPerfil2>
-
-        <ContainerPerfil3>
-          <Actividad>Rendimiento</Actividad>
-          <BotonRojo1>
-            <BotonText>Lengua</BotonText>
-          </BotonRojo1>
-        </ContainerPerfil3>
-      </ScrollView>
-    </Container>
-  );
+  }
+  
 }
 
 const Nombre = styled.Text`

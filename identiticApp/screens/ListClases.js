@@ -52,7 +52,7 @@ render(){
           />
         }
       />
-      <ClassBenefit image={require("./assets/class.jpg")} caption={"Clases"} />
+      <ClassBenefit image={require("../assets/class.jpg")} caption={"Clases"} />
       <ScrollView
         horizontal={true}
         style={{ paddingBottom: 15, marginEnd: 15 }}
@@ -67,7 +67,7 @@ render(){
                  
                   materia={item.materia}
                   name={item.usuario}
-                  image= {require("./assets/avatar.jpg")}
+                  image= {require("../assets/avatar.jpg")}
                   escuela = {clases.escuela}
                   amount={item.identibits + " Idtb disponibles"}
                   topic={item.tema}
@@ -95,7 +95,7 @@ const clases = [
   {
     //materia: item.materia,
     //name: "Joaquin Polonuer",
-    //image: require("./assets/avatar.jpg"),
+    //image: require("../assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
     //topic: item.tema,
     //amount: "125 Idtb Disponibles",
@@ -104,7 +104,7 @@ const clases = [
   {
     materia: "matematica",
     name: "Gonzalo Waisman",
-    image: require("./assets/avatar.jpg"),
+    image: require("../assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
     topic: "Tema: Derivadas e integrales, calculo, algebra",
     amount: "235 Idtb Disponibles",
@@ -113,7 +113,7 @@ const clases = [
   {
     materia: "matematica",
     name: "Facundo Moreno",
-    image: require("./assets/avatar.jpg"),
+    image: require("../assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
     topic: "Tema: Geometria, angulos, trigonometria, semejanza y Pitagoras",
     amount: "220 Idtb Disponibles",

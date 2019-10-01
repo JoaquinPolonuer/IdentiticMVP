@@ -30,7 +30,7 @@ export default function ClasesMateria() {
           />
         }
       />
-      <ClassBenefit image={require("./assets/class.jpg")} caption={"Clases"} />
+      <ClassBenefit image={require("../assets/class.jpg")} caption={"Clases"} />
       <ScrollView
         horizontal={true}
         style={{ paddingBottom: 15, marginEnd: 4 }}
@@ -66,29 +66,29 @@ const clases = [
   {
     materia: "matematica",
     name: "Joaquin Polonuer",
-    image: require("./assets/avatar.jpg"),
+    image: require("../assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
     topic:
       "Tema: Funcion por tamos, funciones logartimicas, analisis matematico y ecuaciones de todo tipo",
     amount: "125 Idtb Disponibles",
-    logo: require("./assets/logo-react.png")
+    logo: require("../assets/logo-react.png")
   },
   {
     materia: "matematica",
     name: "Gonzalo Waisman",
-    image: require("./assets/avatar.jpg"),
+    image: require("../assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
     topic: "Tema: Derivadas e integrales, calculo, algebra",
     amount: "235 Idtb Disponibles",
-    logo: require("./assets/logo-react.png")
+    logo: require("../assets/logo-react.png")
   },
   {
     materia: "matematica",
     name: "Facundo Moreno",
-    image: require("./assets/avatar.jpg"),
+    image: require("../assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
     topic: "Tema: Geometria, angulos, trigonometria, semejanza y Pitagoras",
     amount: "220 Idtb Disponibles",
-    logo: require("./assets/logo-react.png")
+    logo: require("../assets/logo-react.png")
   }
 ];

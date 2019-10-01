@@ -19,7 +19,7 @@ export default function PremiosCategoria() {
       <IdentiticHeader />
       
       <ClassBenefit
-        image={require("./assets/espectaculos.jpg")}
+        image={require("../assets/espectaculos.jpg")}
         caption={"Espectaculos"}
       />
       <ScrollView
@@ -57,28 +57,28 @@ const clases = [
   {
     materia: "Cine",
     name: "Cines Showcase",
-    image: require("./assets/cine.jpg"),
+    image: require("../assets/cine.jpg"),
     escuela: "2x1 En todas las sucursales",
     topic: "Presentando el cupon obtendras un 2x1 para cualquier pelicula",
     amount: "Por 125 Idtb",
-    logo: require("./assets/logo-react.png")
+    logo: require("../assets/logo-react.png")
   },
   {
     materia: "Ciencia",
     name: "Planetario",
-    image: require("./assets/planetario.jpg"),
+    image: require("../assets/planetario.jpg"),
     escuela: 'Entrada para "El Principito"',
     topic: "Valido los fines de semana ",
     amount: "Por 235 Idtb",
-    logo: require("./assets/logo-react.png")
+    logo: require("../assets/logo-react.png")
   },
   {
     materia: "Computacion",
     name: "Ekoparty security conference",
-    image: require("./assets/ekoparty.jpg"),
+    image: require("../assets/ekoparty.jpg"),
     escuela: "20% de descuento en entradas",
     topic: "Valido hasta el 24/7",
     amount: "Por 400 Idtb",
-    logo: require("./assets/logo-react.png")
+    logo: require("../assets/logo-react.png")
   }
 ];

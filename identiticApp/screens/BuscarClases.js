@@ -19,42 +19,42 @@ const data = [
   {
     key: 0,
     title: "Matematica",
-    image: require("./assets/background2.jpg")
+    image: require("../assets/background2.jpg")
   },
   {
     key: 1,
     title: "Arte",
-    image: require("./assets/background2.jpg")
+    image: require("../assets/background2.jpg")
   },
   {
     key: 2,
     title: "Quimica",
-    image: require("./assets/background2.jpg")
+    image: require("../assets/background2.jpg")
   },
   {
     key: 3,
     title: "Geografia",
-    image: require("./assets/background2.jpg")
+    image: require("../assets/background2.jpg")
   },
   {
     key: 4,
     title: "Historia",
-    image: require("./assets/background2.jpg")
+    image: require("../assets/background2.jpg")
   },
   {
     key: 5,
     title: "Lengua",
-    image: require("./assets/background2.jpg")
+    image: require("../assets/background2.jpg")
   },
   {
     key: 6,
     title: "Formacion etica",
-    image: require("./assets/background2.jpg")
+    image: require("../assets/background2.jpg")
   },
   {
     key: 7,
     title: "Fisica",
-    image: require("./assets/background2.jpg")
+    image: require("../assets/background2.jpg")
   }
 
   // { key: 'K' },
@@ -79,6 +79,10 @@ const formatData = (data, numColumns) => {
 const numColumns = 2;
 
 export default class BuscarClases extends React.Component {
+  static navigationOptions = {
+    header: null
+};
+  
   renderItem = ({ item, index }) => {
     if (item.empty === true) {
       return <View style={[styles.item, styles.itemInvisible]} />;

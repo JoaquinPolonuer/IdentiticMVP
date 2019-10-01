@@ -4,13 +4,16 @@ import { Header } from "react-native-elements";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Card2 from "../components/Card2";
-import Gestion from "../components/Gestion";
+import ComponentGestion from "../components/CompGestion";
 
 import Subject from "../components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default class Gestion extends Component {
+  static navigationOptions = {
+    header: null
+  };
   render() {
     return (
       <Container>
@@ -33,14 +36,14 @@ export default class Gestion extends Component {
 
         <ScrollView>
           {gestiones.map((gestion, index) => (
-            <Gestion key={index} image={gestion.image} title={gestion.text} />
+            <ComponentGestion key={index} image={gestion.image} title={gestion.text} />
           ))}
 
           {/* <Gestion
           title="Lengua y literatura"
-          image={require("./assets/practice.jpg")}
+          image={require("../assets/practice.jpg")}
           c aption="React Native"
-          logo={require("./assets/logo-react.png")}  
+          logo={require("../assets/logo-react.png")}  
         >
         </Gestion> */}
         </ScrollView>
@@ -51,19 +54,19 @@ export default class Gestion extends Component {
 
 const gestiones = [
   {
-    image: require("./assets/wpGestion/calificaciones.jpg"),
+    image: require("../assets/wpGestion/calificaciones.jpg"),
     text: "Calificaciones"
   },
   {
-    image: require("./assets/wpGestion/inasistencias.jpg"),
+    image: require("../assets/wpGestion/inasistencias.jpg"),
     text: "Inasistencias"
   },
   {
-    image: require("./assets/wpGestion/calendario.jpg"),
+    image: require("../assets/wpGestion/calendario.jpg"),
     text: "Calendario"
   },
   {
-    image: require("./assets/wpGestion/horarios.jpg"),
+    image: require("../assets/wpGestion/horarios.jpg"),
     text: "Horarios"
   }
 ];

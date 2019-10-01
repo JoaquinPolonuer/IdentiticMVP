@@ -66,7 +66,7 @@ export default function Clases() {
           </View>
         </SafeAreaView>
         <SchoolName
-          image={require("./assets/ort.jpg")}
+          image={require("../assets/ort.jpg")}
           subtitle={"Mi escuela"}
           caption={"Colegio ORT Montañeses"}
         />
@@ -74,23 +74,23 @@ export default function Clases() {
         <View style={{ flex: 1, flexDirection: "row" }}>
           <Card
             title="Ver Clases"
-            image={require("./assets/background2.jpg")}
+            image={require("../assets/background2.jpg")}
             caption="React Native"
-            logo={require("./assets/logo-react.png")}
+            logo={require("../assets/logo-react.png")}
             subtitle="5 of 12 sections"
           />
           <Card
             title="Solicitar      Clases"
-            image={require("./assets/background1.jpg")}
+            image={require("../assets/background1.jpg")}
             caption="React Native"
-            logo={require("./assets/logo-react.png")}
+            logo={require("../assets/logo-react.png")}
             subtitle="5 of 12 sections"
           />
         </View>
         <Ofrecer
           title="Ofrecer Clases"
           caption="React Native"
-          logo={require("./assets/logo-react.png")}
+          logo={require("../assets/logo-react.png")}
           subtitle="5 of 12 sections"
         />
       </ScrollView>

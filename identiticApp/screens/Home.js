@@ -1,5 +1,5 @@
-import React from "react";
-import { ScrollView, SafeAreaView, Text } from "react-native";
+import React, {Component} from "react";
+import { ScrollView, SafeAreaView, Text, TouchableOpacity} from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
 import CardBuscarClases from "../components/CardBuscarClases";
@@ -9,7 +9,13 @@ import Subject from "../components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function AApp() {
+export default class Home extends Component {
+  
+  static navigationOptions = {
+    header: null
+  };
+
+  render(){    
   return (
     <Container>
       <Header
@@ -30,7 +36,7 @@ export default function AApp() {
       />
       <ScrollView>
         <TitleBar>
-          <Avatar source={require("./assets/avatar.jpg")} />
+          <Avatar source={require("../assets/avatar.jpg")} />
           <Title>Bienvenido,</Title>
           <Name>Joaquin Polonuer</Name>
         </TitleBar>
@@ -39,30 +45,32 @@ export default function AApp() {
           horizontal={true}
           style={{ bottom: 100 }}
           showsHorizontalScrollIndicator={false}
-        >
+        >          
           <CardBuscarClases
             title="Buscar         Clases"
-            image={require("./assets/class.jpg")}
+            image={require("../assets/class.jpg")}
             caption="React Native"
-            logo={require("./assets/logo-react.png")}
+            logo={require("../assets/logo-react.png")}
             subtitle="5 of 12 sections"
+            
           />
+
           <ScrollView
             style={{ width: 250 }}
             contentContainerStyle={{ alignItems: "center" }}
           >
             <Card2
               title="Practica    diaria"
-              image={require("./assets/practice.jpg")}
+              image={require("../assets/practice.jpg")}
               caption="React Native"
-              logo={require("./assets/logo-react.png")}
+              logo={require("../assets/logo-react.png")}
               subtitle="5 of 12 sections"
             />
             <Card2
               title="Como te sientes?"
-              image={require("./assets/feel.jpg")}
+              image={require("../assets/feel.jpg")}
               caption="React Native"
-              logo={require("./assets/logo-react.png")}
+              logo={require("../assets/logo-react.png")}
               subtitle="5 of 12 sections"
             />
           </ScrollView>
@@ -85,27 +93,27 @@ export default function AApp() {
         </ScrollView>
       </ScrollView>
     </Container>
-  );
+  );}
 }
 
 const subjects = [
   {
-    image: require("./assets/ico-matematica.png"),
+    image: require("../assets/ico-matematica.png"),
     text: "Matematica",
     mark: "7:45 - 9:05"
   },
   {
-    image: require("./assets/ico-lengua.png"),
+    image: require("../assets/ico-lengua.png"),
     text: "Lengua",
     mark: "9:20 - 10:40"
   },
   {
-    image: require("./assets/ico-historia.png"),
+    image: require("../assets/ico-historia.png"),
     text: "Historia",
     mark: "10:55 - 12:15"
   },
   {
-    image: require("./assets/ico-quimica.png"),
+    image: require("../assets/ico-quimica.png"),
     text: "Quimica",
     mark: "13:05 - 14:30"
   }

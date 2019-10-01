@@ -53,17 +53,17 @@ export default function AApp() {
 
 const subjects = [
   {
-    image: require("./assets/check-mark.png"),
+    image: require("../assets/check-mark.png"),
     text: "15/07/19",
     mark: "1"
   },
   {
-    image: require("./assets/check-mark.png"),
+    image: require("../assets/check-mark.png"),
     text: "3/08/19",
     mark: "0.5"
   },
   {
-    image: require("./assets/check-mark.png"),
+    image: require("../assets/check-mark.png"),
     text: "4/08/19",
     mark: "0.5"
   }

@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Gestion = props => (
+const ComponentGestion = props => (
   <Container>
     <Image source={props.image} />
     <Title>{props.title}</Title>
   </Container>
 );
 
-export default Gestion;
+export default ComponentGestion;
 
 const Content = styled.View`
   padding-left: 20px;

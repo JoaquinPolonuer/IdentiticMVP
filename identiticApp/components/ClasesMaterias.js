@@ -38,7 +38,7 @@ const Wrapper = styled.View`
   margin-left: 10px;
 `;
 const Container = styled.TouchableOpacity`
-  width: 90%;
+  width: 47%;
   height: 120px;
   margin-left: 5px;
   margin-right: 5px;

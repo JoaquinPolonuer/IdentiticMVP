@@ -46,6 +46,7 @@ export default function App() {
             caption="React Native"
             logo={require("./assets/logo-react.png")}
             subtitle="5 of 12 sections"
+            onPress={this.props.navigation.push('BuscarClases')}
           />
           <ScrollView
             horizontal={false}

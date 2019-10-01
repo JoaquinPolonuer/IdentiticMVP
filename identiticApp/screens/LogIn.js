@@ -22,7 +22,7 @@ export default class LogIn extends React.Component {
   }
 
   async _loadAsync() {
-    const imageAssets = cacheImages([require("./assets/bg1.jpg")]);
+    const imageAssets = cacheImages([require("../assets/bg1.jpg")]);
 
     await Promise.all([...imageAssets]);
   }
