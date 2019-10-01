@@ -18,7 +18,7 @@ import Profile from '../Profile'
 import AApp from "../screens/Home";
 
 const Application = StackNavigator({
-    Home: { screen: Login },
+    Home: { screen: App },
     Profile: { screen: Profile }
     }, {
         navigationOptions: {

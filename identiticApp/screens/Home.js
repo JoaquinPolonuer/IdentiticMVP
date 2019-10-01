@@ -8,11 +8,13 @@ import Card2 from "../components/Card2";
 import Subject from "../components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import Card from "../components/Card";
 
 export default class Home extends Component {
-  
+ 
   static navigationOptions = {
-    header: null
+    header: null,
+    showIcon: true
   };
 
   render(){    
@@ -40,20 +42,26 @@ export default class Home extends Component {
           <Title>Bienvenido,</Title>
           <Name>Joaquin Polonuer</Name>
         </TitleBar>
-
         <ScrollView
           horizontal={true}
           style={{ bottom: 100 }}
           showsHorizontalScrollIndicator={false}
-        >          
-          <CardBuscarClases
-            title="Buscar         Clases"
-            image={require("../assets/class.jpg")}
-            caption="React Native"
-            logo={require("../assets/logo-react.png")}
-            subtitle="5 of 12 sections"
-            
-          />
+        >    
+        {card.map((card, index) => (
+          <TouchableOpacity key ={index} onPress={() => {
+            this.props.navigation.navigate("BuscarClases")
+          }}>
+            <CardBuscarClases
+            title= {card.title}
+            image={card.image}
+            caption={card.image}
+            logo={card.logo}
+            subtitle={card.subtitle}                      
+            />
+          </TouchableOpacity>
+
+        ))}      
+          
 
           <ScrollView
             style={{ width: 250 }}
@@ -75,6 +83,8 @@ export default class Home extends Component {
             />
           </ScrollView>
         </ScrollView>
+
+        <TouchableOpacity style = {{CardBuscarClases}} />
         <Subtitle>Materias de Hoy</Subtitle>
 
         <ScrollView
@@ -88,6 +98,7 @@ export default class Home extends Component {
               text={subject.text}
               image={subject.image}
               mark={subject.mark}
+              
             />
           ))}
         </ScrollView>
@@ -95,6 +106,14 @@ export default class Home extends Component {
     </Container>
   );}
 }
+
+const card = [{
+  title: "Buscar         Clases",
+  image: require("../assets/class.jpg"),
+  caption: "React Native",
+  logo: require("../assets/logo-react.png"),
+  subtitle:"5 of 12 sections"   
+}]
 
 const subjects = [
   {

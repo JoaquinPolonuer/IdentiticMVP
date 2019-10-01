@@ -6,6 +6,7 @@ const CardBuscarClases = props => (
   <Container>
     <Image source={props.image} />
     <Title>{props.title}</Title>
+    
   </Container>
 );
 
@@ -46,6 +47,7 @@ const Container = styled.TouchableOpacity`
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 3;
 `;
+
 
 const Cover = styled.View`
   width: 100%;
