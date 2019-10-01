@@ -1,7 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView, TouchableOpacity, AsyncStorage, } from "react-native";
 import { Asset } from "expo-asset";
 import { AppLoading } from "expo";
+import { StackNavigator } from 'react-navigation';
+import { UserInterfaceIdiom } from "expo-constants";
 
 function cacheImages(images) {
   return images.map(image => {

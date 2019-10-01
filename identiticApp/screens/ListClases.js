@@ -5,13 +5,35 @@ import styled from "styled-components";
 import SchoolName from "../components/SchoolName";
 import Clase from "../components/Clase";
 import Ofrecer from "../components/Ofrecer";
-
+import {Platform, StyleSheet, View, FlatList} from 'react-native';
 import Subject from "../components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import ClassBenefit from "../components/ClassBenefit";
 
-export default function ListaClases() {
+
+
+
+export default class ListaClases extends React.Component {
+
+  state =
+  {
+    data:[]
+  }
+  
+  fetchData= async()=>
+  {
+    const response = await fetch('http://192.168.0.83:3000/Clases');
+    const usuarios = await response.json();
+    this.setState({data: usuarios});
+    console.log(JSON.stringify(data));
+  }
+  
+  componentDidMount()
+{
+  this.fetchData();
+}
+render(){
   return (
     <Container>
       <Header
@@ -36,22 +58,28 @@ export default function ListaClases() {
         style={{ paddingBottom: 15, marginEnd: 15 }}
         showsHorizontalScrollIndicator={false}
       >
-        {clases.map((card, index) => (
-          <Clase
-            key={index}
-            materia={card.materia}
-            name={card.name}
-            image={card.image}
-            escuela={card.escuela}
-            amount={card.amount}
-            topic={card.topic}
-            days={card.days}
-          />
-        ))}
+        <FlatList
+          horizontal = {true}
+          data={this.state.data}
+          keyExtractor={(item,index) => index.toString()}
+          renderItem={({item}) =>
+                <Clase
+                 
+                  materia={item.materia}
+                  name={item.usuario}
+                  image= {require("./assets/avatar.jpg")}
+                  escuela = {clases.escuela}
+                  amount={item.identibits + " Idtb disponibles"}
+                  topic={item.tema}
+                  days={item.dias_disp}
+                />
+          }      
+        />
+
       </ScrollView>
     </Container>
   );
-}
+}}
 
 const Container = styled.View`
   flex: 1;
@@ -65,13 +93,13 @@ const Bar = styled.Text`
 `;
 const clases = [
   {
-    materia: "matematica",
-    name: "Joaquin Polonuer",
-    image: require("./assets/avatar.jpg"),
+    //materia: item.materia,
+    //name: "Joaquin Polonuer",
+    //image: require("./assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
-    topic: "Analisis matematico y ecuaciones",
-    amount: "125 Idtb Disponibles",
-    days: "Lunes, Martes y Jueves"
+    //topic: item.tema,
+    //amount: "125 Idtb Disponibles",
+    //days: item.dias_disp
   },
   {
     materia: "matematica",

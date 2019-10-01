@@ -5,11 +5,44 @@ import {
   StyleSheet,
   Image,
   Dimensions,
-  TextInput
+  TextInput,
+  KeyboardAvoidingView,
+  TouchableOpacity,
+  AsyncStorage
 } from "react-native";
 import Animated, { Easing } from "react-native-reanimated";
 import { TapGestureHandler, State } from "react-native-gesture-handler";
+import { StackNavigator } from 'react-navigation';
+import App from '../index';
+import Profile from '../Profile'
+import AApp from "../screens/Home";
 
+const Application = StackNavigator({
+    Home: { screen: Login },
+    Profile: { screen: Profile }
+    }, {
+        navigationOptions: {
+            header: false,
+        }
+});
+/*
+state =
+{
+  data:[]
+}
+
+fetchData= async()=>
+{
+  const response = await fetch('http://localhost:3000/');
+  const users = await response.json();
+  this.setState({data: usuarios});
+}
+
+componentDidMount()
+{
+  this.fetchData();
+}
+*/
 const { width, height } = Dimensions.get("window");
 const {
   Value,
@@ -58,9 +91,14 @@ function runTiming(clock, value, dest) {
   ]);
 }
 
-class IdentiticApp extends Component {
-  constructor() {
-    super();
+export default class IdentiticApp extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+    }
 
     this.buttonOpacity = new Value(1);
     this.onStateChange = event([
@@ -123,6 +161,19 @@ class IdentiticApp extends Component {
       extrapolate: Extrapolate.CLAMP
     });
   }
+
+  componentDidMount() {
+    this._loadInitialState().done();
+  }
+
+  _loadInitialState = async () => {
+
+    var value = await AsyncStorage.getItem('user')
+    if (value !== null) {
+      this.props.navigation.navigate('Profile');
+    }
+  }
+  
   render() {
     return (
       <View
@@ -185,17 +236,20 @@ class IdentiticApp extends Component {
               placeholder="Username"
               style={styles.TextInput}
               placeholderTextColor="black"
+              onChangeText={ (username) => this.setState({username} ) }
             />
             <TextInputPassword
               placeholder="Password"
               style={styles.TextInput}
               placeholderTextColor="black"
+              onChangeText={ (password) => this.setState({password} ) }
+              secureTextEntry = {true}
             />
             <Animated.View style={styles.buttonInicio}>
               <Text style={{ fontSize: 14, fontWeight: "400", color: "white" }}>
                 Iniciar Sesion
               </Text>
-            </Animated.View>
+            </Animated.View> 
           </Animated.View>
         </View>
       </View>
@@ -277,3 +331,32 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4
   }
 });
+
+login = () => {
+
+  fetch('http://localhost:3000/Login',{
+    method: 'POST',
+    headers: {
+      'Accept': 'Application/json',
+      'Content-Type': 'Application/json',
+    },
+    body: JSON.stringify({
+      username: this.state.username,
+      password: this.state.password,
+    })
+  })
+  
+  .then((response) => response.json())
+  .then ((res) => {
+
+      if (res.success === true){
+        AsyncStorage.setItem('usuario', res.usuario);
+        this.props.navigation.navigate('Profile');
+      }
+
+      else{
+          alert(res.message);
+      }
+  })
+  .done();
+}
