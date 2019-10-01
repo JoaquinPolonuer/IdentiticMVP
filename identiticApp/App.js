@@ -8,18 +8,114 @@ import {
 } from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
-import CardBuscarClases from "../components/CardBuscarClases";
-import Card2 from "../components/Card2";
-import Input from "../components/TextInput";
+import CardBuscarClases from "./components/CardBuscarClases";
+import Card2 from "./components/Card2";
+import Input from "./components/TextInput";
 
-import Subject from "../components/Subjects";
+import Subject from "./components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
-import SubjectMarks from "../components/Subjects";
+import SubjectMarks from "./components/Subjects";
 import { Dropdown } from "react-native-material-dropdown";
 
 export default class AApp extends React.Component {
-  state = { tema: "" };
+  state = { 
+    
+    tema: "",
+
+    diasDisp: [],
+
+    materia: '',
+
+    Lunes: {
+      disponible: false,
+      color: "white",
+      nombre: 'Lunes'
+    },
+    Martes: {
+      disponible: false,
+      color: "white",
+      nombre: 'Martes'
+    },
+    Miercoles: {
+      disponible: false,
+      color: "white",
+      nombre: 'Miercoles'
+    },
+    Jueves: {
+      disponible: false,
+      color: "white",
+      nombre: 'Jueves'
+    },
+    Viernes: {
+      disponible: false,
+      color: "white",
+      nombre: 'Viernes'
+    },
+
+
+  };
+
+
+  onDaySelected = (day) => {
+
+      if(!this.state[day].disponible){
+        this.state.diasDisp.push(day)
+
+        this.setState({
+          [day]: {
+          disponible: true,
+          color: "#27ce4b"
+          },
+
+
+        })
+      }else{
+
+        function removeA(arr) {
+        var what, a = arguments, L = a.length, ax;
+        while (L > 1 && arr.length) {
+            what = a[--L];
+            while ((ax= arr.indexOf(what)) !== -1) {
+                arr.splice(ax, 1);
+            }
+        }
+        return arr;
+}
+        
+
+        this.setState({
+          [day]: {
+          disponible: false,
+          color: "white"
+          },
+          diasDisp: removeA(this.state.diasDisp, day),
+        })
+      }
+
+      console.log(this.state.diasDisp);
+
+  }
+
+  async publicarClase () {
+     fetch('https://192.168.0.83:3000/Clases', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+
+        usuario: "Sebastián Domínguez",
+        dias_disp: JSON.stringify(this.state.diasDisp),
+        materia: this.state.materia,
+        tema: this.state.tema,
+        identibits: 125
+
+      }),
+    });  
+  }
+
 
   render() {
     let data = [
@@ -59,11 +155,26 @@ export default class AApp extends React.Component {
           <Dias>
             <Texto>Dias</Texto>
             <Row>
-              {dias.map((dia, index) => (
-                <DayButton key={index}>
-                  <NameDia>{dia.name[0]}</NameDia>
+                <DayButton style = {{backgroundColor: this.state.Lunes.color}} onPress={() => this.onDaySelected('Lunes')}
+                >
+                  <NameDia>L</NameDia>
                 </DayButton>
-              ))}
+                <DayButton style = {{backgroundColor: this.state.Martes.color}} onPress={() => this.onDaySelected('Martes')}
+                >
+                  <NameDia>M</NameDia>
+                </DayButton>
+                <DayButton style = {{backgroundColor: this.state.Miercoles.color}} onPress={() => this.onDaySelected('Miercoles')}
+                >
+                  <NameDia>M</NameDia>
+                </DayButton>
+                <DayButton style = {{backgroundColor: this.state.Jueves.color}} onPress={() => this.onDaySelected('Jueves')}
+                >
+                  <NameDia>J</NameDia>
+                </DayButton>
+                <DayButton style = {{backgroundColor: this.state.Viernes.color}} onPress={() => this.onDaySelected('Viernes')}
+                >
+                  <NameDia>V</NameDia>
+                </DayButton>              
             </Row>
           </Dias>
           <Materia>
@@ -81,6 +192,8 @@ export default class AApp extends React.Component {
                 flex: 1,
                 justifyContent: "center"
               }}
+              onChangeText={materia => this.setState({ materia })}
+
             />
             {/*https://www.npmjs.com/package/react-native-material-dropdown*/}
           </Materia>
@@ -89,11 +202,12 @@ export default class AApp extends React.Component {
             <Input
               placeholder="ej: Expresiones racionales"
               value={this.state.tema}
-              onChangeText={email => this.setState({ tema })}
+              onChangeText={tema => this.setState({ tema })}
             />
           </Tema>
           <Publish>
-            <Boton>
+            <Boton  onPress={() => this.publicarClase()}
+            >
               <TextBot>Publicar</TextBot>
             </Boton>
           </Publish>
