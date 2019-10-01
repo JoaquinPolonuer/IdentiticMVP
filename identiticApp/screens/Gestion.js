@@ -2,12 +2,7 @@ import React, { Component } from "react";
 import { ScrollView, SafeAreaView, Text } from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
-import Card from "../components/Card";
-import Card2 from "../components/Card2";
 import ComponentGestion from "../components/CompGestion";
-
-import Subject from "../components/Subjects";
-import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default class Gestion extends Component {

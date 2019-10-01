@@ -16,18 +16,18 @@ const HomeStack = createStackNavigator({
       tabBarLabel: "Home",
   }
   
-  const CoursesStack = createStackNavigator({
+  const Perfil = createStackNavigator({
     Profile: Profile
   });
   
-  const ProjectsStack = createStackNavigator({
+  const Management = createStackNavigator({
     Gestion: Gestion
   });
 
   const TabNavigator = createBottomTabNavigator({
     HomeStack,
-    CoursesStack,
-    ProjectsStack
+    Perfil,
+    Management
   });
   
   export default TabNavigator;
