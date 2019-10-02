@@ -13,6 +13,11 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Dropdown } from "react-native-material-dropdown";
 
 export default class CrearClase extends React.Component {
+  static navigationOptions = {
+    header: null,
+    showIcon: true
+  };
+  
   state = { 
     
     tema: "",

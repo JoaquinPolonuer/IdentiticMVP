@@ -67,13 +67,17 @@ render(){
             logo={require("../assets/logo-react.png")}
             subtitle="5 of 12 sections"
           />
-            <Card
-            title="Espectáculos"
-            image={require("../assets/background1.jpg")}
-            caption="React Native"
-            logo={require("../assets/logo-react.png")}
-            subtitle="5 of 12 sections"
-          />
+          
+      
+          <Card
+              title="Espectáculos"
+              image={require("../assets/background1.jpg")}
+              caption="React Native"
+              logo={require("../assets/logo-react.png")}
+              subtitle="5 of 12 sections"
+            />
+          
+            
           </View>
         </View>
         </ScrollView>

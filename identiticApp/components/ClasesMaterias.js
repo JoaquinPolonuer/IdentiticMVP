@@ -38,10 +38,10 @@ const Wrapper = styled.View`
   margin-left: 10px;
 `;
 const Container = styled.TouchableOpacity`
-  width: 47%;
+  width: 350px;
   height: 120px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 10px;

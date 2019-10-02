@@ -7,7 +7,8 @@ import {
   Dimensions,
   ScrollView,
   SafeAreaView,
-  TextInput
+  TextInput,
+  TouchableOpacity
 } from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
@@ -76,7 +77,7 @@ const formatData = (data, numColumns) => {
   return data;
 };
 
-const numColumns = 2;
+const numColumns = 1;
 
 export default class BuscarClases extends React.Component {
   static navigationOptions = {
@@ -87,7 +88,11 @@ export default class BuscarClases extends React.Component {
     if (item.empty === true) {
       return <View style={[styles.item, styles.itemInvisible]} />;
     }
-    return <ClasesMaterias key={index} title={item.title} image={item.image} />;
+    return (
+      <TouchableOpacity onPress={()=> {this.props.navigation.push("VerClases")}}> 
+        <ClasesMaterias key={index} title={item.title} image={item.image} />
+      </TouchableOpacity>
+    );
   };
 
   render() {

@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, SafeAreaView, Text, TextInput, View } from "react-native";
+import { ScrollView, SafeAreaView, Text, TextInput, View, TouchableOpacity} from "react-native";
 import { Header, SearchBar } from "react-native-elements";
 import styled from "styled-components";
 import SchoolName from "../components/SchoolName";
@@ -11,7 +11,11 @@ import Subject from "../components/Subjects";
 import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function Clases() {
+export default class Clases extends React.Component {
+  static navigationOptions = {
+    header: null
+};
+ render(){
   return (
     <Container>
       <Header
@@ -80,22 +84,30 @@ export default function Clases() {
             subtitle="5 of 12 sections"
           />
           <Card
-            title="Solicitar      Clases"
+            title="Solicitar        Clases"
             image={require("../assets/background1.jpg")}
             caption="React Native"
             logo={require("../assets/logo-react.png")}
             subtitle="5 of 12 sections"
           />
         </View>
+        <TouchableOpacity height={170} width={170} onPress={() => {
+                this.props.navigation.push("CrearClase");
+              }}
+        >
         <Ofrecer
           title="Ofrecer Clases"
           caption="React Native"
           logo={require("../assets/logo-react.png")}
           subtitle="5 of 12 sections"
         />
+        </TouchableOpacity>
+        
       </ScrollView>
     </Container>
   );
+
+}
 }
 
 const Container = styled.View`

@@ -13,8 +13,14 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import ClassBenefit from "../components/ClassBenefit";
 import Beneficio from "../components/Beneficio";
 
-export default function PremiosCategoria() {
-  return (
+class PremiosCategoria extends React.Component {
+  static navigationOptions = {
+    header: null,
+    showIcon: true
+  };
+
+  render(){
+    return (
     <Container>
       <IdentiticHeader />
       
@@ -41,6 +47,7 @@ export default function PremiosCategoria() {
       </ScrollView>
     </Container>
   );
+        }
 }
 
 const Container = styled.View`

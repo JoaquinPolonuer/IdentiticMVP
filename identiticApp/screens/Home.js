@@ -48,7 +48,7 @@ export default class Home extends Component {
           showsHorizontalScrollIndicator={false}
         >    
         {card.map((card, index) => (
-          <TouchableOpacity key ={index} onPress={() => {
+          <TouchableOpacity key={index} onPress={() => {
             this.props.navigation.navigate("BuscarClases")
           }}>
             <CardBuscarClases

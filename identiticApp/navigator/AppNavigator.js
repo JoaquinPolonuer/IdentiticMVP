@@ -6,8 +6,10 @@ import Clases from '../screens/Clases';
 import BuscarClases from '../screens/BuscarClases';
 import App from '../index';
 import Profile from '../screens/Profile';
+import CrearClase from '../screens/CrearClase';
+import Marks from '../screens/Marks';
+import ListaClases from '../screens/ListClases';
 import TabNavigator from "./TabNavigator";
-    
 
 const AppNavigator = createStackNavigator({
 
@@ -15,8 +17,11 @@ const AppNavigator = createStackNavigator({
     LogIn: App,
     Gestion: Gestion,
     Clases: Clases,
+    CrearClase: CrearClase,
     BuscarClases: BuscarClases,
-    Profile: Profile
+    VerClases: ListaClases,
+    Profile: Profile,
+    Calificaciones: Marks
 }); 
 
 

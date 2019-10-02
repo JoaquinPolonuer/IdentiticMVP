@@ -55,7 +55,7 @@ const Cover = styled.View`
 
 const Title = styled.Text`
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
   margin-left: 20px;

@@ -1,122 +1,202 @@
 import React from "react";
-import { ScrollView, SafeAreaView, Text } from "react-native";
-import { Header, SearchBar } from "react-native-elements";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  Dimensions,
+  ScrollView,
+  SafeAreaView,
+  TextInput,
+  TouchableOpacity
+} from "react-native";
+import { Header } from "react-native-elements";
 import styled from "styled-components";
-import SchoolName from "../components/SchoolName";
-import Clase from "../components/Clase";
-import Ofrecer from "../components/Ofrecer";
-import {Platform, StyleSheet, View, FlatList} from 'react-native';
-import Subject from "../components/Subjects";
-import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
-import ClassBenefit from "../components/ClassBenefit";
+import ClasesMaterias from "../components/ClasesMaterias";
+import Icon from "react-native-vector-icons/Ionicons";
 
+const data = [
+  {
+    key: 0,
+    title: "Matematica",
+    image: require("../assets/background2.jpg")
+  },
+  {
+    key: 1,
+    title: "Arte",
+    image: require("../assets/background2.jpg")
+  },
+  {
+    key: 2,
+    title: "Quimica",
+    image: require("../assets/background2.jpg")
+  },
+  {
+    key: 3,
+    title: "Geografia",
+    image: require("../assets/background2.jpg")
+  },
+  {
+    key: 4,
+    title: "Historia",
+    image: require("../assets/background2.jpg")
+  },
+  {
+    key: 5,
+    title: "Lengua",
+    image: require("../assets/background2.jpg")
+  },
+  {
+    key: 6,
+    title: "Formacion etica",
+    image: require("../assets/background2.jpg")
+  },
+  {
+    key: 7,
+    title: "Fisica",
+    image: require("../assets/background2.jpg")
+  }
 
+  // { key: 'K' },
+  // { key: 'L' },
+];
 
+const formatData = (data, numColumns) => {
+  const numberOfFullRows = Math.floor(data.length / numColumns);
+
+  let numberOfElementsLastRow = data.length - numberOfFullRows * numColumns;
+  while (
+    numberOfElementsLastRow !== numColumns &&
+    numberOfElementsLastRow !== 0
+  ) {
+    data.push({ key: `blank-${numberOfElementsLastRow}`, empty: true });
+    numberOfElementsLastRow++;
+  }
+
+  return data;
+};
+
+const numColumns = 1;
 
 export default class ListaClases extends React.Component {
-
-  state =
-  {
-    data:[]
-  }
+  static navigationOptions = {
+    header: null
+};
   
-  fetchData= async()=>
-  {
-    const response = await fetch('http://192.168.0.83:3000/Clases');
-    const usuarios = await response.json();
-    this.setState({data: usuarios});
-    console.log(JSON.stringify(data));
-  }
-  
-  componentDidMount()
-{
-  this.fetchData();
-}
-render(){
-  return (
-    <Container>
-      <Header
-        linearGradientProps={{
-          colors: ["#7444E8", "#B43DF3"],
-          start: { x: 0, y: 0.5 },
-          end: { x: 1, y: 0.5 }
+  renderItem = ({ item, index }) => {
+    if (item.empty === true) {
+      return <View style={[styles.item, styles.itemInvisible]} />;
+    }
+    return (
+      <TouchableOpacity height={170} width={170} onPress={() => {
+        this.props.navigation.push("ListaClases");
         }}
-        centerComponent={<Bar>IDENTITIC</Bar>}
-        rightComponent={
-          <MaterialCommunityIcons
-            name="message-reply"
-            size={28}
-            color={"#FFF"}
-            style={{ position: "absolute", right: 10, top: -15 }}
-          />
-        }
-      />
-      <ClassBenefit image={require("../assets/class.jpg")} caption={"Clases"} />
-      <ScrollView
-        horizontal={true}
-        style={{ paddingBottom: 15, marginEnd: 15 }}
-        showsHorizontalScrollIndicator={false}
       >
-        <FlatList
-          horizontal = {true}
-          data={this.state.data}
-          keyExtractor={(item,index) => index.toString()}
-          renderItem={({item}) =>
-                <Clase
-                 
-                  materia={item.materia}
-                  name={item.usuario}
-                  image= {require("../assets/avatar.jpg")}
-                  escuela = {clases.escuela}
-                  amount={item.identibits + " Idtb disponibles"}
-                  topic={item.tema}
-                  days={item.dias_disp}
-                />
-          }      
+        <ClasesMaterias key={index} title={item.title} image={item.image} />  
+      </TouchableOpacity>
+       
+    );
+  };
+
+  render() {
+    return (
+      <Container>
+        <Header
+          linearGradientProps={{
+            colors: ["#7444E8", "#B43DF3"],
+            start: { x: 0, y: 0.5 },
+            end: { x: 1, y: 0.5 }
+          }}
+          centerComponent={<Bar>IDENTITIC</Bar>}
+          rightComponent={
+            <MaterialCommunityIcons
+              name="message-reply"
+              size={28}
+              color={"#FFF"}
+              style={{ position: "absolute", right: 10, top: -15 }}
+            />
+          }
         />
+        <ScrollView>
+          <SafeAreaView style={{ flex: 1 }}>
+            <View style={{ flex: 1 }}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  backgroundColor: "white",
+                  height: 45,
+                  padding: 10,
+                  top: 15,
+                  borderRadius: 5,
+                  marginHorizontal: 20,
+                  shadowOffset: { width: 0, height: 0 },
+                  shadowColor: "black",
+                  shadowOpacity: 0.2,
+                  elevation: 1,
+                  marginBottom: 15
+                }}
+              >
+                <Icon name="ios-search" size={20} style={{ top: 3 }} />
+                <TextInput
+                  placeholder="Buscar clases"
+                  placeholderTextColor="grey"
+                  style={{
+                    flex: 1,
+                    fontWeight: "500",
+                    backgroundColor: "white",
+                    left: 10,
+                    top: 3,
+                    height: 20
+                  }}
+                />
+              </View>
+            </View>
+          </SafeAreaView>
+          <FlatList
+            data={formatData(data, numColumns)}
+            style={styles.container}
+            renderItem={this.renderItem}
+            numColumns={numColumns}
+            contentContainerStyle={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          />
+        </ScrollView>
+      </Container>
+    );
+  }
+}
 
-      </ScrollView>
-    </Container>
-  );
-}}
-
-const Container = styled.View`
-  flex: 1;
-  background-color: whitesmoke;
-`;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginVertical: 20
+  },
+  item: {
+    backgroundColor: "#4D243D",
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    margin: 1,
+    height: Dimensions.get("window").width / numColumns // approximate a square
+  },
+  itemInvisible: {
+    backgroundColor: "transparent"
+  },
+  itemText: {
+    color: "#fff"
+  }
+});
 
 const Bar = styled.Text`
   font-size: 25px;
   color: #fff;
   font-weight: 600;
 `;
-const clases = [
-  {
-    //materia: item.materia,
-    //name: "Joaquin Polonuer",
-    //image: require("../assets/avatar.jpg"),
-    escuela: "Ort sede Belgrano",
-    //topic: item.tema,
-    //amount: "125 Idtb Disponibles",
-    //days: item.dias_disp
-  },
-  {
-    materia: "matematica",
-    name: "Gonzalo Waisman",
-    image: require("../assets/avatar.jpg"),
-    escuela: "Ort sede Belgrano",
-    topic: "Tema: Derivadas e integrales, calculo, algebra",
-    amount: "235 Idtb Disponibles",
-    days: "Lunes, Martes y Jueves"
-  },
-  {
-    materia: "matematica",
-    name: "Facundo Moreno",
-    image: require("../assets/avatar.jpg"),
-    escuela: "Ort sede Belgrano",
-    topic: "Tema: Geometria, angulos, trigonometria, semejanza y Pitagoras",
-    amount: "220 Idtb Disponibles",
-    days: "Lunes, Martes y Jueves"
-  }
-];
+const Container = styled.View`
+  flex: 1;
+  background-color: whitesmoke;
+`;

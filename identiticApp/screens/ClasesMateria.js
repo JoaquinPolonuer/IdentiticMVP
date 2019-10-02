@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, SafeAreaView, Text } from "react-native";
+import { ScrollView, SafeAreaView, Text, TouchableOpacity} from "react-native";
 import { Header, SearchBar } from "react-native-elements";
 import styled from "styled-components";
 import SchoolName from "../components/SchoolName";
