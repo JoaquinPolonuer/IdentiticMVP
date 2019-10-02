@@ -12,6 +12,25 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import ClassBenefit from "./components/ClassBenefit";
 
 export default function App() {
+  
+  state =
+  {
+    data:[]
+  }
+  
+  fetchData= async()=>
+  {
+    const response = await fetch('http://35.237.172.249:3000/Clases');
+    const usuarios = await response.json();
+    this.setState({data: usuarios});
+    console.log(JSON.stringify(data));
+  }
+  
+  componentDidMount()
+{
+  this.fetchData();
+}
+
   return (
     <Container>
       <Header
@@ -36,17 +55,23 @@ export default function App() {
         style={{ paddingBottom: 15, marginEnd: 4 }}
         showsHorizontalScrollIndicator={false}
       >
-        {clases.map((card, index) => (
-          <Clase
-            key={index}
-            materia={card.materia}
-            name={card.name}
-            image={card.image}
-            escuela={card.escuela}
-            amount={card.amount}
-            topic={card.topic}
-          />
-        ))}
+    <ScrollView
+          horizontal = {true}
+          data={this.state.data}
+          keyExtractor={(item,index) => index.toString()}
+          renderItem={({item}) =>
+                <Clase
+                 
+                  materia={item.materia}
+                  name={item.usuario}
+                  image= {require("../assets/avatar.jpg")}
+                  escuela = {clases.escuela}
+                  amount={item.identibits + " Idtb disponibles"}
+                  topic={item.tema}
+                  days={item.dias_disp}
+                />
+          }      
+        />
       </ScrollView>
     </Container>
   );
@@ -64,13 +89,13 @@ const Bar = styled.Text`
 `;
 const clases = [
   {
-    materia: "matematica",
-    name: "Joaquin Polonuer",
-    image: require("./assets/avatar.jpg"),
+    //materia: "matematica",
+    //name: "Joaquin Polonuer",
+    //image: require("./assets/avatar.jpg"),
     escuela: "Ort sede Belgrano",
-    topic:
-      "Tema: Funcion por tamos, funciones logartimicas, analisis matematico y ecuaciones de todo tipo",
-    amount: "125 Idtb Disponibles",
+    //topic:
+      //"Tema: Funcion por tamos, funciones logartimicas, analisis matematico y ecuaciones de todo tipo",
+    //amount: "125 Idtb Disponibles",
     logo: require("./assets/logo-react.png")
   },
   {

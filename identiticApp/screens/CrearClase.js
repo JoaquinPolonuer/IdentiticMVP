@@ -97,10 +97,10 @@ export default class CrearClase extends React.Component {
   }
 
   async publicarClase () {
-     fetch('https://192.168.0.83:3000/Clases', {
+     fetch('http://35.237.172.249:3000/NewClase', {
       method: 'POST',
       headers: {
-        Accept: 'application/json',
+        'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ 
