@@ -3,23 +3,21 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Home from '../screens/Home';
 import Gestion from '../screens/Gestion'
 import Clases from '../screens/Clases';
-import BuscarClases from '../screens/BuscarClases';
 import App from '../index';
 import Profile from '../screens/Profile';
 import CrearClase from '../screens/CrearClase';
 import Marks from '../screens/Marks';
-import ListaClases from '../screens/ListClases';
+import ClasesMateria from '../ClasesMateria';
 import TabNavigator from "./TabNavigator";
 
 const AppNavigator = createStackNavigator({
 
     Home: Home,
     LogIn: App,
-    Gestion: Gestion,
+    Gestion: Gestion, 
     Clases: Clases,
     CrearClase: CrearClase,
-    BuscarClases: BuscarClases,
-    VerClases: ListaClases,
+    VerClases: ClasesMateria,
     Profile: Profile,
     Calificaciones: Marks
 }); 

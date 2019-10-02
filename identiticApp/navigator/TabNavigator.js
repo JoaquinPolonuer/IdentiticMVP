@@ -4,11 +4,10 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import HomeScreen from "../screens/Home";
 import Profile from "../screens/Profile";
 import Gestion from '../screens/Gestion';
-import BuscarClases from '../screens/BuscarClases';
 import { Ionicons } from '@expo/vector-icons';
 import Premios from '../screens/Premios'
 import Clases from '../screens/Clases'
-import ListaClases from '../screens/ListClases';
+import ClasesMateria from '../ClasesMateria';
 import CrearClase from '../screens/CrearClase';
 import Marks from '../screens/Marks';
 
@@ -18,8 +17,7 @@ const inactiveColor = "#b8bece";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
-    BuscarClases: BuscarClases,
-    VerClases: ListaClases
+    VerClases: ClasesMateria
   });
 
   HomeStack.navigationOptions = {
@@ -76,7 +74,7 @@ const HomeStack = createStackNavigator({
   const Crear = createStackNavigator({
     Clases: Clases,
     CrearClase: CrearClase,
-    VerClases: ListaClases
+    VerClases: ClasesMateria
   });
 
   Crear.navigationOptions = {

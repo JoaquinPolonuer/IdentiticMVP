@@ -11,8 +11,9 @@ import LinearGradient from "react-native-linear-gradient";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import ClassBenefit from "./components/ClassBenefit";
 
-export default function App() {
+export default class ClasesMateria extends React.Component {
   
+
   state =
   {
     data:[]
@@ -26,11 +27,12 @@ export default function App() {
     console.log(JSON.stringify(data));
   }
   
-  componentDidMount()
-{
+  componentWillMount()
+  {
   this.fetchData();
-}
-
+  }
+  
+  render(){
   return (
     <Container>
       <Header
@@ -64,7 +66,7 @@ export default function App() {
                  
                   materia={item.materia}
                   name={item.usuario}
-                  image= {require("../assets/avatar.jpg")}
+                  image= {require("./assets/avatar.jpg")}
                   escuela = {clases.escuela}
                   amount={item.identibits + " Idtb disponibles"}
                   topic={item.tema}
@@ -75,6 +77,7 @@ export default function App() {
       </ScrollView>
     </Container>
   );
+}
 }
 
 const Container = styled.View`

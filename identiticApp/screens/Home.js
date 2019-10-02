@@ -49,7 +49,7 @@ export default class Home extends Component {
         >    
         {card.map((card, index) => (
           <TouchableOpacity key={index} onPress={() => {
-            this.props.navigation.navigate("BuscarClases")
+            this.props.navigation.navigate("VerClases")
           }}>
             <CardBuscarClases
             title= {card.title}
