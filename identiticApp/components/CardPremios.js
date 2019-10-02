@@ -4,6 +4,7 @@ import { TouchableOpacity } from "react-native";
 
 const Card = props => (
   <Container>
+    <Image source={props.image} />
     <Title>{props.title}</Title>
   </Container>
 );
@@ -39,13 +40,21 @@ const Container = styled.TouchableOpacity`
   width: 43.5%;
   height: 100px;
   margin: 3.5px;
-  left: 10%;
+  left: 15%;
   border-radius: 5px;
   background-color: #7444e8;
   overflow: hidden;
-  margin-top: 60px;
+  margin-top: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   elevation: 3;
+`;
+
+const Image = styled.Image`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const Cover = styled.View`

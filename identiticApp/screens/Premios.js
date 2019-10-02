@@ -1,90 +1,91 @@
 import React from "react";
-import { ScrollView, SafeAreaView, Text, TextInput, View, TouchableOpacity} from "react-native";
+import {
+  ScrollView,
+  SafeAreaView,
+  Text,
+  TextInput,
+  View,
+  TouchableOpacity
+} from "react-native";
 import { Header, SearchBar } from "react-native-elements";
 import Icon from "react-native-vector-icons/Ionicons";
-import Card from "../components/Card";
+import CardPremios from "../components/CardPremios";
 import styled from "styled-components";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default class Premios extends React.Component {
-    static navigationOptions = {
-        header: null,
-        showIcon: true
-      };
-   
-render(){
-  return (
-    <Container>
-      <Header
-        linearGradientProps={{
-          colors: ["#7444E8", "#B43DF3"],
-          start: { x: 0, y: 0.5 },
-          end: { x: 1, y: 0.5 }
-        }}
-        centerComponent={<Bar>IDENTITIC</Bar>}
-        rightComponent={
-          <MaterialCommunityIcons
-            name="message-reply"
-            size={28}
-            color={"#FFF"}
-            style={{ position: "absolute", right: 10, top: -15 }}
-          />
-        }
-      />
-        
-        <TitleBar>
-          <Avatar source={require("../assets/avatar.jpg")} />
-          <Title>Tenes 10 Identibits</Title>
-          <Boton  onPress={() => console.log()}
-            >
-              <TextBot>Conseguir Identibits</TextBot>
-            </Boton>     
-      </TitleBar>
-        
-      <ScrollView>
-        <View style={{flexDirection:"column",flex:1}}>
-      <View style={{  flexDirection: "row" }}>
-          <Card
-            title="Librerias"
-            image={require("../assets/background2.jpg")}
-            caption="React Native"
-            logo={require("../assets/logo-react.png")}
-            subtitle="5 of 12 sections"
-          />
-            <Card
-            title="Kioscos"
-            image={require("../assets/background2.jpg")}
-            caption="React Native"
-            logo={require("../assets/logo-react.png")}
-            subtitle="5 of 12 sections"
-          />
-          </View>
-          <View style={{ flexDirection: "row" }}>
-          <Card
-            title="Fotocopias"
-            image={require("../assets/background1.jpg")}
-            caption="React Native"
-            logo={require("../assets/logo-react.png")}
-            subtitle="5 of 12 sections"
-          />
-          
-      
-          <Card
-              title="Espectáculos"
-              image={require("../assets/background1.jpg")}
-              caption="React Native"
-              logo={require("../assets/logo-react.png")}
-              subtitle="5 of 12 sections"
-            />
-          
-            
-          </View>
-        </View>
-        </ScrollView>
-    </Container>
-  );
+  static navigationOptions = {
+    header: null,
+    showIcon: true
+  };
 
-}
+  render() {
+    return (
+      <Container>
+        <Header
+          linearGradientProps={{
+            colors: ["#7444E8", "#B43DF3"],
+            start: { x: 0, y: 0.5 },
+            end: { x: 1, y: 0.5 }
+          }}
+          centerComponent={<Bar>IDENTITIC</Bar>}
+          rightComponent={
+            <MaterialCommunityIcons
+              name="message-reply"
+              size={28}
+              color={"#FFF"}
+              style={{ position: "absolute", right: 10, top: -15 }}
+            />
+          }
+        />
+        <ContainerPerfil>
+          <Avatar source={require("../assets/wpPremios/identibit.png")} />
+          <Title>150 IDTB disponibles</Title>
+          <Boton onPress={() => console.log()}>
+            <TextBot>Ver como los acumule</TextBot>
+          </Boton>
+        </ContainerPerfil>
+
+        <ScrollView>
+          <View style={{ flexDirection: "column", flex: 1 }}>
+            <View style={{ flexDirection: "row" }}>
+              <CardPremios
+                title="Comida"
+                image={require("../assets/wpPremios/comida.jpg")}
+                caption="React Native"
+                logo={require("../assets/logo-react.png")}
+                subtitle="5 of 12 sections"
+              />
+              <CardPremios
+                title="Ropa"
+                image={require("../assets/wpPremios/ropa.jpg")}
+                caption="React Native"
+                logo={require("../assets/logo-react.png")}
+                subtitle="5 of 12 sections"
+              />
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <CardPremios
+                title="Apps"
+                image={require("../assets/background1.jpg")}
+                caption="React Native"
+                logo={require("../assets/logo-react.png")}
+                subtitle="5 of 12 sections"
+              />
+
+              <CardPremios
+                title="Espectáculos"
+                image={require("../assets/background1.jpg")}
+                caption="React Native"
+                logo={require("../assets/logo-react.png")}
+                subtitle="5 of 12 sections"
+              />
+            </View>
+          </View>
+        </ScrollView>
+      </Container>
+    );
+  }
 }
 
 const Container = styled.View`
@@ -98,14 +99,11 @@ const Bar = styled.Text`
   font-weight: 600;
 `;
 const Avatar = styled.Image`
-  width: 80px;
-  height: 80px;
-  background-color: black;
-  border-radius: 40px;
-  margin-left: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 70px;
+  height: 70px;
+  left: 10%;
+  top: 25%;
+  position: relative;
 `;
 
 const Subtitle = styled.Text`
@@ -117,12 +115,12 @@ const Subtitle = styled.Text`
   text-transform: uppercase;
 `;
 
-
 const Title = styled.Text`
   font-size: 20px;
   color: #b8bece;
   font-weight: 500;
-  margin-left: 30px;
+  left: 38%;
+  bottom: 35%;
 `;
 
 const Name = styled.Text`
@@ -132,27 +130,30 @@ const Name = styled.Text`
   margin-left: 30px;
 `;
 
-
-const TitleBar = styled.View`
-  width: 100%;
-  margin-top: 13px;
-  margin-bottom: 30px;
-  padding-left: 80px;
-`;
 const Boton = styled.TouchableOpacity`
-  background: #7444E8;
+  background: #7444e8;
   height: 40px;
-  width: 145px;
-  border-radius: 7px;
+  width: 170px;
+  border-radius: 5px;
   justify-content: center;
-  margin-left: 55px;
-  margin-top: 10px;
-
-
+  left: 42%;
+  bottom: 25%;
 `;
 const TextBot = styled.Text`
   font-size: 13px;
   color: whitesmoke;
   font-weight: 600;
   text-align: center;
+`;
+
+const ContainerPerfil = styled.View`
+  width: 90%;
+  height: 120px;
+  position: relative;
+  left: 5%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  elevation: 2;
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 5px;
 `;

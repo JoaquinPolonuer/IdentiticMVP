@@ -37,16 +37,14 @@ const Wrapper = styled.View`
   margin-left: 10px;
 `;
 const Container = styled.View`
-  width: 350px;
-  height: 105;
-
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 14px;
+  width: 90%;
+  height: 100px;
+  left: 5%;
+  border-radius: 5px;
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 3px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   elevation: 3;
 `;
 
