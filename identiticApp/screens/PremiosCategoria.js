@@ -1,7 +1,6 @@
 import React from "react";
 import { ScrollView, SafeAreaView, Text } from "react-native";
 import { Header, SearchBar } from "react-native-elements";
-import IdentiticHeader from '../components/IdentiticHeader';
 import styled from "styled-components";
 import SchoolName from "../components/SchoolName";
 import Clase from "../components/Clase";
@@ -13,7 +12,8 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import ClassBenefit from "../components/ClassBenefit";
 import Beneficio from "../components/Beneficio";
 
-class PremiosCategoria extends React.Component {
+export default class PremiosCategoria extends React.Component {
+  
   static navigationOptions = {
     header: null,
     showIcon: true
@@ -21,8 +21,23 @@ class PremiosCategoria extends React.Component {
 
   render(){
     return (
-    <Container>
-      <IdentiticHeader />
+    <Container>    
+      <Header
+        linearGradientProps={{
+          colors: ["#7444E8", "#B43DF3"],
+          start: { x: 0, y: 0.5 },
+          end: { x: 1, y: 0.5 }
+        }}
+        centerComponent={<Bar>IDENTITIC</Bar>}
+        rightComponent={
+          <MaterialCommunityIcons
+            name="message-reply"
+            size={28}
+            color={"#FFF"}
+            style={{ position: "absolute", right: 10, top: -15 }}
+          />
+        }
+      />
       
       <ClassBenefit
         image={require("../assets/espectaculos.jpg")}

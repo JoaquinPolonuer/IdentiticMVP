@@ -13,7 +13,10 @@ import ClassBenefit from "./components/ClassBenefit";
 
 export default class ClasesMateria extends React.Component {
   
-
+  static navigationOptions = {
+    header: null,
+    showIcon: true
+  };
   state =
   {
     data:[]

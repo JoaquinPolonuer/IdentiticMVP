@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { TouchableOpacity } from "react-native";
 
 const CardBuscarClases = props => (
-  <Container>
+  <Container
+  onPress={()=>{this.props.navigation.navigate("VerClases")}}
+  >
     <Image source={props.image} />
     <Title>{props.title}</Title>
     
