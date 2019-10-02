@@ -10,6 +10,7 @@ import Premios from '../screens/Premios'
 import Clases from '../screens/Clases'
 import ListaClases from '../screens/ListClases';
 import CrearClase from '../screens/CrearClase';
+import Marks from '../screens/Marks';
 
 const activeColor = "#4775f2";
 const inactiveColor = "#b8bece";
@@ -28,6 +29,7 @@ const HomeStack = createStackNavigator({
         <Ionicons
          name="ios-home"
          size={26} 
+
          color={focused ? activeColor : inactiveColor} 
          
         />
@@ -40,26 +42,55 @@ const HomeStack = createStackNavigator({
 
   Perfil.navigationOptions = {
     tabBarLabel: "Perfil",
-    showLabel: false
+    showLabel: false,
+    tabBarIcon: ({ focused }) => (
+      <Ionicons
+       name="ios-person"
+       size={26} account-multiple
+
+       color={focused ? activeColor : inactiveColor} 
+       
+      />
+    )
 }
   
   const Management = createStackNavigator({
-    Gestion: Gestion
+    Gestion: Gestion,
+    Calificaciones: Marks
   });
 
   Management.navigationOptions = {
     tabBarLabel: "Gestion",
-    showLabel: false
+    showLabel: false,
+    tabBarIcon: ({ focused }) => (
+      <Ionicons
+       name="ios-book"
+       size={26}
+
+       color={focused ? activeColor : inactiveColor} 
+       
+      />
+    )
 }
 
   const Crear = createStackNavigator({
     Clases: Clases,
-    CrearClase: CrearClase
+    CrearClase: CrearClase,
+    VerClases: ListaClases
   });
 
   Crear.navigationOptions = {
     tabBarLabel: "Clases",
-    showLabel: false
+    showLabel: false,
+    tabBarIcon: ({ focused }) => (
+      <Ionicons
+       name="ios-people"
+       size={26}
+
+       color={focused ? activeColor : inactiveColor} 
+       
+      />
+    )
 }
 
   const Recompensas = createStackNavigator({
@@ -68,7 +99,16 @@ const HomeStack = createStackNavigator({
 
   Recompensas.navigationOptions = {
     tabBarLabel: "Premios",
-    showLabel: false
+    showLabel: false,
+    tabBarIcon: ({ focused }) => (
+      <Ionicons
+       name="ios-ribbon"
+       size={26} 
+
+       color={focused ? activeColor : inactiveColor} 
+       
+      />
+    )
 }
 
 

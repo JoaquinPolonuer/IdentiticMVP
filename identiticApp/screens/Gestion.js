@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView, SafeAreaView, Text } from "react-native";
+import { ScrollView, SafeAreaView, Text, TouchableOpacity} from "react-native";
 import { Header } from "react-native-elements";
 import styled from "styled-components";
 import ComponentGestion from "../components/CompGestion";
@@ -31,7 +31,11 @@ export default class Gestion extends Component {
 
         <ScrollView>
           {gestiones.map((gestion, index) => (
+            <TouchableOpacity key={index} onPress={() => {
+              this.props.navigation.navigate("Calificaciones")
+            }}>
             <ComponentGestion key={index} image={gestion.image} title={gestion.text} />
+            </TouchableOpacity>
           ))}
 
           {/* <Gestion

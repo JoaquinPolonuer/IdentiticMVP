@@ -5,8 +5,15 @@ import styled from "styled-components";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import SubjectMarks from "../components/Subjects";
 
-export default function AApp() {
+export default class AApp extends React.Component {
+  
+  static navigationOptions = {
+    header: null
+  }
+  
+  render(){  
   return (
+    
     <Container>
       <Header
         linearGradientProps={{
@@ -40,6 +47,7 @@ export default function AApp() {
       </ScrollView>
     </Container>
   );
+ }
 }
 
 const subjects = [

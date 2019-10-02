@@ -60,6 +60,9 @@ export default class Profile extends Component {
             <BotonRojo1>
               <BotonText>Lengua</BotonText>
             </BotonRojo1>
+            <BotonVerde1>
+              <BotonText>Matemática</BotonText>
+            </BotonVerde1>
           </ContainerPerfil3>
         </ScrollView>
       </Container>
@@ -218,7 +221,7 @@ const BotonTextMensaje = styled.Text`
   margin-top: 5px;
 `;
 
-const BotonRojo1 = styled.TouchableOpacity`
+const BotonRojo1 = styled.View`
   position: absolute;
   left: 5%;
   top: 50%;
@@ -226,6 +229,16 @@ const BotonRojo1 = styled.TouchableOpacity`
   height: 29px;
   background-color: #ff5252;
   border-radius: 5px;
+`;
+const BotonVerde1 = styled.View`
+  position: absolute;
+  left: 34%;
+  top: 50%;
+  width: 92px;
+  height: 29px;
+  background-color: #4ed613;
+  border-radius: 5px;
+  margin-left: 10px;
 `;
 
 const Actividad = styled.Text`

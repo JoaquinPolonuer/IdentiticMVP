@@ -30,6 +30,7 @@ const Image = styled.Image`
 
 const Text = styled.Text`
   font-weight: 600;
-  font-size: 17px;
+  font-size: 19px;
   margin-left: 12px;
 `;
+
